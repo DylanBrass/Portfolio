@@ -1,33 +1,121 @@
-@tailwind base;
+
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+nav {
+
+    /* Add these styles to your existing CSS or create a new CSS file */
+
+    /* Navbar animation */
+    transition: background-color 0.3s ease-in-out;
+
+    /* Logo animation */
+    .logo-box a {
+        transition: color 0.3s ease-in-out;
+    }
+
+    .logo-box a:hover {
+        color: #2D9CDB; /* Change to your desired hover color */
+    }
+
+    /* Navigation link animation */
+    .link-box a {
+        position: relative;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .link-box a:hover {
+        color: #2D9CDB; /* Change to your desired hover color */
+    }
+
+    .link-box a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: #fff; /* Change to your desired line color */
+        position: absolute;
+        bottom: -5px;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .link-box a:hover::after {
+        width: 100%;
+    }
+
+    /* Language switch animation */
+    span {
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    span:hover {
+        color: #2D9CDB; /* Change to your desired hover color */
+    }
+
+    img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+        transform: scale(1.2);
+    }
+
+
+    background: var(--Blue-Gray-900, #151D20);
+
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 80px;
+
+    .link-box {
+
+
+        a {
+            color: var(--Blue-Gray-50, #FBFBFB);
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%; /* 16px */
+        }
+    }
+
+    .logo-box {
+        #logo {
+            color: #2D9CDB;
+            font-size: 20px;
+        }
+    }
+
+    .social-box {
+        height: 100%;
+        width: 100%;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    padding: 0;
+    margin: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.vertical-bar {
+    width: 1px;
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: white;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+img{
+    &:hover{
+        cursor: pointer;
+    }
 }
