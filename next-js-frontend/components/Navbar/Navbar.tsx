@@ -1,3 +1,5 @@
+'use client'
+
 import ChatImg from "../../public/Gmail_icon.svg";
 import Image from "next/image";
 import linkedin from "../../public/LinkedIn_icon.svg.png";
@@ -28,7 +30,7 @@ export default function Navbar() {
                 <div className={"vertical-bar"}/>
 
                 <Image className={""} src={ChatImg} alt={"Talk to me !"}
-                height={40}
+                       height={40}
                 />
                 <div className={"vertical-bar"}/>
 
@@ -38,6 +40,10 @@ export default function Navbar() {
                         src={linkedin}
                         alt={"LinkedIn"}
                         width={40} height={40}
+                        onClick={() => {
+                            window.open("https://www.linkedin.com/in/dylan-brassard-43001428b/", "_blank")
+                        }
+                        }
                     />
                 </div>
             </div>

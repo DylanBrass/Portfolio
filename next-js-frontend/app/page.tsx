@@ -1,4 +1,5 @@
 import PetClinic from "@/components/Pet-Clinic/PetClinic";
+import ShowRepos from "@/components/Github/ShowRepos";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
                 </div>
                 <div className={"col-span-6 text-center"}>
                     <h2>Github</h2>
+                    <ShowRepos/>
                 </div>
 
             </div>
