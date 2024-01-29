@@ -4,28 +4,30 @@
 
 nav {
 
-    /* Add these styles to your existing CSS or create a new CSS file */
+    .vertical-bar {
+        width: 1px;
+        margin-left: 1em;
+        margin-right: 1em;
+        background-color: white;
+    }
 
-    /* Navbar animation */
     transition: background-color 0.3s ease-in-out;
 
-    /* Logo animation */
     .logo-box a {
         transition: color 0.3s ease-in-out;
     }
 
     .logo-box a:hover {
-        color: #2D9CDB; /* Change to your desired hover color */
+        color: #2D9CDB;
     }
 
-    /* Navigation link animation */
     .link-box a {
         position: relative;
         transition: color 0.3s ease-in-out;
     }
 
     .link-box a:hover {
-        color: #2D9CDB; /* Change to your desired hover color */
+        color: #2D9CDB;
     }
 
     .link-box a::after {
@@ -33,7 +35,7 @@ nav {
         display: block;
         width: 0;
         height: 2px;
-        background-color: #fff; /* Change to your desired line color */
+        background-color: #fff;
         position: absolute;
         bottom: -5px;
         transition: width 0.3s ease-in-out;
@@ -43,14 +45,13 @@ nav {
         width: 100%;
     }
 
-    /* Language switch animation */
     span {
         transition: color 0.3s ease-in-out;
         cursor: pointer;
     }
 
     span:hover {
-        color: #2D9CDB; /* Change to your desired hover color */
+        color: #2D9CDB;
     }
 
     img {
@@ -62,7 +63,7 @@ nav {
     }
 
 
-    background: var(--Blue-Gray-900, #151D20);
+    background: #151D20;
 
     display: flex;
     align-items: center;
@@ -73,12 +74,12 @@ nav {
 
 
         a {
-            color: var(--Blue-Gray-50, #FBFBFB);
+            color: #FBFBFB;
             font-family: Inter;
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
-            line-height: 100%; /* 16px */
+            line-height: 100%;
         }
     }
 
@@ -102,12 +103,6 @@ body {
 }
 
 
-.vertical-bar {
-    width: 1px;
-    margin-left: 1em;
-    margin-right: 1em;
-    background-color: white;
-}
 
 
 a{
@@ -117,5 +112,33 @@ a{
 img{
     &:hover{
         cursor: pointer;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.hobby-image {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.appear {
+
+    animation: 1s fadeIn;
+    animation-fill-mode: forwards;
+
+    visibility: hidden;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
     }
 }

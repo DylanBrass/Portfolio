@@ -20,9 +20,12 @@ export default function RootLayout({
         <html lang="en">
 
         <body className={inter.className}>
-        <Navbar/>
-        {children}
+        <div className={"h-screen animation-wrapper"} id={"animation-intro"}>
+
+            <Navbar/>
+            {children}
+        </div>
         </body>
         </html>
-    );
+);
 }

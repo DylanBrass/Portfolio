@@ -1,11 +1,11 @@
 
 export default function PetClinic() {
     return (
-        <main>
+        <div>
 
-            <h1>Pet Clinic</h1>
+            <h1 className={"text-center"} id={"pet-clinic"}>Pet Clinic</h1>
 
-        </main>
+        </div>
     );
 }
 

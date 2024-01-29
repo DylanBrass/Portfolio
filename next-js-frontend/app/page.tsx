@@ -1,11 +1,18 @@
 import PetClinic from "@/components/Pet-Clinic/PetClinic";
 import ShowRepos from "@/components/Github/ShowRepos";
+import ContactManager from "@/components/Contact-Manager/ContactManager";
+import Corso from "@/components/ECP/Corso";
+import GolfGame from "@/components/Game-Project/GolfGame";
+import ArtGallery from "@/components/Art-Gallery/ArtGallery";
+import Intro from "@/components/Intorduction/Intro";
 
 export default function Home() {
     return (
         <main>
 
-            <h1 className={"text-center"}>Home</h1>
+            <Intro/>
+
+            <hr/>
             <div className={"grid grid-cols-12"}>
                 <div className={"col-span-6 text-center"}>
                     <h2>My Past Projects</h2>
@@ -18,10 +25,24 @@ export default function Home() {
 
             </div>
 
+            <hr/>
+            <span id={"projects"} />
+            <Corso/>
 
             <hr/>
-            <h1>Pet Clinic</h1>
             <PetClinic/>
+
+            <hr/>
+
+            <ContactManager/>
+
+            <hr/>
+
+            <GolfGame/>
+
+            <hr/>
+
+            <ArtGallery/>
 
         </main>
     );

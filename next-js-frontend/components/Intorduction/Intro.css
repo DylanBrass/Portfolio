@@ -1,0 +1,14 @@
+@keyframes smooth-appear {
+    to{
+        bottom: 20px;
+        opacity:1;
+    }
+}
+.animation-wrapper {
+    height: 100vh;
+    width: 100%;
+    bottom: -100%;
+    opacity:0;
+    left: 50%;
+    animation: smooth-appear 2s ease forwards;
+}
