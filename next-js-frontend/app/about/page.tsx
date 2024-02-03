@@ -98,17 +98,20 @@ export default function Page() {
 
                 <div className="flex flex-col lg:flex-row items-center lg:gap-4 mt-4">
                     <div className={`hobby-image ${showFish ? '' : ''}`} onClick={() => handleImageClick('fish')}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={"https://via.placeholder.com/150"} alt={"placeholder"}
                              className={"rounded-full flex items-center justify-center w-96 mb-2 lg:mb-0"}/>
                         <p className={"text-center"}>Fish keeping</p>
                     </div>
                     <div className={`hobby-image ${showHistory ? '' : ''}`} onClick={() => handleImageClick('history')}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={"https://via.placeholder.com/150"} alt={"placeholder"}
                              className={"rounded-full flex items-center justify-center w-96 mb-2 lg:mb-0"}/>
                         <p className={"text-center"}>Studying History</p>
                     </div>
                     <div className={`hobby-image ${showModelBuilding ? '' : ''}`}
                          onClick={() => handleImageClick('modelBuilding')}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={"https://via.placeholder.com/150"} alt={"placeholder"}
                              className={"rounded-full flex items-center justify-center w-96 mb-2 lg:mb-0"}/>
                         <p className={"text-center"}>Model Building</p>
