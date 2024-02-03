@@ -53,9 +53,6 @@ export default function Navbar() {
 
                          }}
                     >
-                        <button className="close" onClick={close}>
-                            &times;
-                        </button>
                         <div className={"flex flex-col justify-center items-center"}>
                             <h1 className="header"> Contact Me</h1>
                             <div className="content text-center">

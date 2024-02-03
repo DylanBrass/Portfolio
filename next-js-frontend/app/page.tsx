@@ -4,7 +4,7 @@ import ContactManager from "@/components/Contact-Manager/ContactManager";
 import Corso from "@/components/ECP/Corso";
 import GolfGame from "@/components/Game-Project/GolfGame";
 import ArtGallery from "@/components/Art-Gallery/ArtGallery";
-import Intro from "@/components/Intorduction/Intro";
+import Intro from "@/components/Introduction/Intro";
 
 export default function Home() {
     return (
