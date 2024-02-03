@@ -4,12 +4,7 @@
 
 nav {
 
-    .vertical-bar {
-        width: 1px;
-        margin-left: 1em;
-        margin-right: 1em;
-        background-color: white;
-    }
+
 
     transition: background-color 0.3s ease-in-out;
 
@@ -102,7 +97,10 @@ body {
     margin: 0;
 }
 
+p{
+    font-family: 'Titillium Web', sans-serif;
 
+}
 
 
 a{
@@ -141,4 +139,18 @@ html {
         visibility: visible;
         opacity: 1;
     }
+}
+
+.vertical-bar {
+    width: 1px;
+    margin-left: 1em;
+    margin-right: 1em;
+    background: white;
+
+    height: 2vh;
+}
+
+a{
+    font-family: 'Titillium Web', sans-serif;
+
 }

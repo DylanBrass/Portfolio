@@ -1,14 +1,23 @@
-var express = require('express');
+const express = require('express');
+const cors = require('cors')
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const apiRouter = require('./routes/api');
 
-var app = express();
-app.listen(8080)
+const corsOptions = {
+    origin: 'http://localhost:3000',''
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+cors(corsOptions)
+
+
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -17,5 +26,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
+
+
+
+
+
+app.use(cors())
+
 
 module.exports = app;
+
+
+

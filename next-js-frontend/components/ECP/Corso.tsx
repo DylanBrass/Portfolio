@@ -5,7 +5,7 @@ import java from 'react-syntax-highlighter/dist/esm/languages/prism/java';
 export default function Corso() {
 
     SyntaxHighlighter.registerLanguage('java', java);
-    const codeString = "\n" +
+    const codeString =
         "@Slf4j\n" +
         "@Generated\n" +
         "@Configuration\n" +
@@ -173,8 +173,6 @@ export default function Corso() {
         "\n" +
         "        return cookieCsrfTokenRepository;\n" +
         "    }\n" +
-        "\n" +
-        "\n" +
         "}"
 
     return (

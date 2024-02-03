@@ -14,7 +14,9 @@ export default function Home() {
 
             <hr/>
             <div className={"grid grid-cols-12"}>
+
                 <div className={"col-span-6 text-center"}>
+                    <span id={"projects"}/>
                     <h2>My Past Projects</h2>
                     <p>These are some of my past projects</p>
                 </div>
@@ -26,7 +28,6 @@ export default function Home() {
             </div>
 
             <hr/>
-            <span id={"projects"} />
             <Corso/>
 
             <hr/>
