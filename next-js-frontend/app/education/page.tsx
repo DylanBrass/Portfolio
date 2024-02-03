@@ -9,7 +9,7 @@ export default function Education() {
     const [commendations, setCommendations] = useState([]);
 
     const getCommendations = async () => {
-        axios.get('http://localhost:8000/api/commendations')
+        axios.get(`${process.env.NEXT_PUBLIC_BE_HOST}api/commendations`)
             .then((response) => {
                 setCommendations(response.data);
             })
