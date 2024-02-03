@@ -43,6 +43,7 @@ export default function Page() {
                 width: "80%",
             }}>
                 <div className={"flex p-12 float-start"}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={"https://via.placeholder.com/500"} alt={"placeholder"}
                          className={"rounded-full flex items-center justify-center w-96"}/>
                 </div>
