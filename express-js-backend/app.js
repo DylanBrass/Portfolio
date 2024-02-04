@@ -1,9 +1,10 @@
+import('./server/loadEnv.mjs');
+
 const express = require('express');
 const cors = require('cors')
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -34,6 +35,9 @@ app.use('/api', apiRouter);
 
 app.use(cors())
 
+app.listen(8000, () => {
+    console.log("Server is running on port 8000")
+})
 
 module.exports = app;
 
