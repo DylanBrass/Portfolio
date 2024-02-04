@@ -1,0 +1,26 @@
+/* Commendations.module.css */
+.approve-wrapper {
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .input {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+}

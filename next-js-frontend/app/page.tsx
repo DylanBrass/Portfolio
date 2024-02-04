@@ -1,3 +1,5 @@
+'use client'
+
 import PetClinic from "@/components/Pet-Clinic/PetClinic";
 import ShowRepos from "@/components/Github/ShowRepos";
 import ContactManager from "@/components/Contact-Manager/ContactManager";

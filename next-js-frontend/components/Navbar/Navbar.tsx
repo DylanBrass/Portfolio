@@ -3,6 +3,7 @@ import ChatImg from "../../public/Gmail_icon.svg";
 import Image from "next/image";
 import linkedin from "../../public/LinkedIn_icon.svg.png";
 import Popup from "reactjs-popup";
+import Swal from "sweetalert2";
 
 export default function Navbar() {
 
@@ -33,43 +34,27 @@ export default function Navbar() {
                 <span className="text-white mt-auto mb-auto lg:mt-0 lg:mb-0">EN</span>
 
                 <div className="vertical-bar"/>
+                <div className="email-box" onClick={()=>{
+                    Swal.fire({
+                        icon: "info",
+                        title: "Write me an email",
+                        html: "My email is <a href='mailto:dylan.brassard@outlook.com'>dylan.brassard@outlook.com</a>" +
+                            "<br>Click the button to copy it to your clipboard." +
+                            "<br>" +
+                            "<button class='button' onclick='navigator.clipboard.writeText(\"dylan.brassard@outlook.com\")'>Copy</button>",
+                        showCloseButton: true,
 
-                <Popup
-                    trigger={<div className="email-box">
-                        <Image
-                            className=""
-                            src={ChatImg}
-                            alt="Email"
-                            width={40}
-                        />
-                    </div>}
-                    modal
-                    nested
-                >
-                    <div className="modal w-96 h-96 bg-white shadow-2xl"
-                         style={{
-                             borderRadius: "10px",
-                             padding: "2rem",
 
-                         }}
-                    >
-                        <div className={"flex flex-col justify-center items-center"}>
-                            <h1 className="header"> Contact Me</h1>
-                            <div className="content text-center">
-                                {" "}
-                                Feel free to contact me at
-                                <a href="mailto:dylan.brassard@outlook.com">
-                                    {" "}dylan.brassard@outlook.com
-                                </a>
+                    });
 
-                                <br/>
-                                <button className="button" onClick={copyEmail}>
-                                    Copy Email
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </Popup>
+                }}>
+                    <Image
+                        className=""
+                        src={ChatImg}
+                        alt="Email"
+                        width={40}
+                    />
+                </div>
 
 
                 <div className="vertical-bar"/>

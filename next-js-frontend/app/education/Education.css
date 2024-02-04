@@ -1,3 +1,35 @@
 #education {
     margin: auto;
+
+
+    .list-education {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .list-education h1 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .list-education li {
+        margin-bottom: 1rem;
+    }
+
+    .resume-box {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .commendation {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+
 }

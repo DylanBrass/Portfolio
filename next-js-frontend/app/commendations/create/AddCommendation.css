@@ -1,0 +1,28 @@
+.add-commendation-wrapper {
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .input,
+    .textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+}

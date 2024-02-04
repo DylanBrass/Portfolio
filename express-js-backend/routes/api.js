@@ -1,6 +1,9 @@
 let express = require('express');
 let router = express.Router();
 let cors = require('cors');
+
+let sendEmail = require('../services/EmailService.js')
+
 const corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200
@@ -17,7 +20,7 @@ router.get('/commendations', async (req, res) => {
 
     let collection = await db.collection("portfolio")
 
-    let results = await collection.find({})
+    let results = await collection.find({show: true})
         .project({ _id: 0 })
         .toArray();
 
@@ -30,6 +33,9 @@ router.post('/commendations', async (req, res) => {
         res.status(400).send('missing fields')
         return
     }
+
+
+
 
     const db = await connectToDatabase();
 
@@ -48,16 +54,41 @@ router.post('/commendations', async (req, res) => {
     newDocument.date = new Date();
 
     let result = await collection.insertOne(newDocument);
+
+    let url = process.env.FE_URL + '/commendations/confirm/' + newDocument.comment_id
+
+    let context = {
+        name: req.body.name,
+        commendation: req.body.message,
+        url: url
+    }
+
+
+    await sendEmail('dylanbrassard1@gmail.com','dylan.brassard@outlook.com','New Commendations for portfolio!', 'confirmCommendation', context).catch(
+        (err) => {
+            console.log(err)
+            res.status(422).send('error sending email')
+
+        }
+    )
+
     res.status(201).send(result)
 })
 
 
 router.patch('/commendations/:id', async (req, res) => {
+
+    if(req.body.pwd !== process.env.PASSWORD){
+        res.status(401).send('Unauthorized')
+        return
+    }
+
     const db = await connectToDatabase();
     const query = { comment_id: req.params.id };
     const updates = {
         $set: { show: true }
     };
+
 
     console.log(query);
     let collection = await db.collection("portfolio");

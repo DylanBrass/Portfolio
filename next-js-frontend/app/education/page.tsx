@@ -28,53 +28,49 @@ export default function Education() {
 
 
     return (
-        <div>
+        <div className="container mx-auto mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 resume-box">
 
-            <div className={"grid grid-cols-12 resume-box"}>
-
-
-                <div id="education" className={"flex flex-col col-span-6 text-center"}>
+                <div id="education" className="flex flex-col col-span-full md:col-span-6 text-center mb-4 md:mb-0">
                     <h2>Education</h2>
-                    <ul className={"list-education"}>
-                        <h1>2021-2024</h1>
+                    <ul className="list-education">
                         <li>
-                            <strong>College Diploma:</strong> DEC in Computer Science
-                        </li>
-                        <li>
-                            <strong>Institution:</strong> Champlain College Saint-Lambert
+                            <h1 className="text-xl font-bold mb-1">2021-2024</h1>
+                            <p>
+                                <strong>College Diploma:</strong> DEC in Computer Science
+                            </p>
+                            <p>
+                                <strong>Institution:</strong> Champlain College Saint-Lambert
+                            </p>
                         </li>
 
-                        <h1>2024-?</h1>
                         <li>
-                            <strong>Degree:</strong> Genie de Logiciel/Software Engineering
-                        </li>
-                        <li>
-                            <strong>Graduation Year:</strong> TBD
+                            <h1 className="text-xl font-bold mb-1">2024-?</h1>
+                            <p>
+                                <strong>Degree:</strong> Genie de Logiciel/Software Engineering
+                            </p>
+                            <p>
+                                <strong>Graduation Year:</strong> TBD
+                            </p>
                         </li>
                     </ul>
-
                 </div>
 
-                <div className={"commendations col-span-6"}>
+                <div className="commendations col-span-full md:col-span-6">
+                    <a href="/commendations/create" className="block mb-4 text-blue-500">Leave me a commendation</a>
                     <h2>Commendations</h2>
 
                     {
-                        commendations.map((commendation, index) => {
-                            return (
-                                <div key={index} className={"commendation"}>
-                                    <h3>{commendation.name}</h3>
-                                    <p>{commendation.message}</p>
-                                </div>
-                            )
-                        })
+                        commendations.map((commendation, index) => (
+                            <div key={index} className="commendation">
+                                <h3 className="text-xl font-bold mb-2">{commendation.name}</h3>
+                                <p>{commendation.message}</p>
+                            </div>
+                        ))
                     }
-
-
-
                 </div>
 
             </div>
-
         </div>
     );
 }
