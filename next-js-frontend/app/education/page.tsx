@@ -3,10 +3,12 @@ import "./Education.css"
 import {useEffect, useState} from "react";
 import axios from "axios";
 
+import Commendations from "../../Models/Commendations";
+
 export default function Education() {
 
 
-    const [commendations, setCommendations] = useState([]);
+    const [commendations, setCommendations] = useState<[Commendations]>([new Commendations("","","","")]);
 
     const getCommendations = async () => {
         axios.get(`${process.env.NEXT_PUBLIC_BE_HOST}api/commendations`)
@@ -57,11 +59,14 @@ export default function Education() {
                     <h2>Commendations</h2>
 
                     {
-                        commendations.map((commendation) => (
-                            <div className={"commendation"} key={"r"}>
-                                {commendation}
-                            </div>
-                        ))
+                        commendations.map((commendation, index) => {
+                            return (
+                                <div key={index} className={"commendation"}>
+                                    <h3>{commendation.name}</h3>
+                                    <p>{commendation.message}</p>
+                                </div>
+                            )
+                        })
                     }
 
 
