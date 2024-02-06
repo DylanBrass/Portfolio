@@ -1,28 +1,28 @@
+'use client'
 import "./Education.css"
-import {Suspense} from "react";
 import axios from "axios";
 
 
 import Commendations from "../../Models/Commendations";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Navigation, Pagination} from "swiper/modules";
+import {Suspense, useEffect, useState} from "react";
 
-export default async function Education() {
-
-
-    async function getCommendations(): Promise<Commendations[]> {
-        let response =  await axios.get(`${process.env.NEXT_PUBLIC_BE_HOST}api/commendations`)
-
-        if (response.status !== 200){
-            return []
-        }
-
-        console.log(response.data)
-
-        return response.data;
-
-    }
+export default function Education() {
 
 
-    const commendations = await getCommendations();
+    const [commendations, setCommendations] = useState<Commendations[]>([]);
+
+    useEffect(() => {
+        axios.get(process.env.NEXT_PUBLIC_BE_HOST + 'api/commendations')
+            .then((response) => {
+                setCommendations(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
 
     return (
         <div className="container mx-auto mt-8">
@@ -60,14 +60,36 @@ export default async function Education() {
                     <a href="/commendations/create" className="block mb-4 text-blue-500">Leave me a commendation</a>
                     <h2>Commendations</h2>
 
-                        {
-                            commendations.map((commendation, index) => (
-                                <div key={index} className="commendation">
-                                    <h3 className="text-xl font-bold mb-2">{commendation.name}</h3>
-                                    <p>{commendation.message}</p>
-                                </div>
-                            ))
-                        }
+                    <Suspense fallback={<div>Loading...</div>}>
+
+                        <Swiper
+                            pagination={{
+                                type: 'bullets',
+                                clickable: true
+                            }}
+                            navigation={
+                                true
+                            }
+                            modules={[Pagination, Navigation]}
+                            className="mySwiper"
+                        >
+                            {commendations.map((commendation, index) => {
+                                return (
+                                    <SwiperSlide
+                                        key={index}
+                                    >
+
+                                        <div key={index} className="commendation">
+                                            <h3>{commendation.name}</h3>
+                                            <p>{commendation.message}</p>
+                                        </div>
+                                    </SwiperSlide>
+                                )
+                            })}
+                        </Swiper>
+
+                    </Suspense>
+
                 </div>
 
             </div>
