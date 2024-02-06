@@ -1,16 +1,13 @@
 'use client'
 import ChatImg from "../../public/Gmail_icon.svg";
 import Image from "next/image";
-import linkedin from "../../public/LinkedIn_icon.svg.png";
-import Popup from "reactjs-popup";
+import linkedin from "../../public/LinkedIn_icon.png";
 import Swal from "sweetalert2";
+import logo from "../../public/logo.png";
 
 export default function Navbar() {
 
 
-    const copyEmail = () => {
-        navigator.clipboard.writeText("dylan.brassard@outlook.com");
-    }
 
 
 
@@ -18,19 +15,19 @@ export default function Navbar() {
         <nav className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-4 pb-4 lg:pt-0 lg:pb-0">
             <div className="logo-box link-box flex gap-x-4 lg:gap-x-24 text-white lg:text-base">
                 <div className={"hidden lg:block"}>
-                    <a id="logo">Dylan Brassard</a>
+                    <a className={"animate-none"} href="/"><Image src={logo} alt="Dylan Brassard" height={65}/></a>
                 </div>
-                <div>
+                <div className={"m-auto"}>
                     <a href="/">Home</a>
                 </div>
-                <div>
+                <div className={"m-auto"}>
                     <a href="/about">About</a>
                 </div>
-                <div>
+                <div className={"m-auto"}>
                     <a href="/education">Education</a>
                 </div>
             </div>
-            <div className="flex items-center justify-end lg:h-max">
+            <div className="contact-wrapper flex items-center justify-end lg:h-max">
                 <span className="text-white mt-auto mb-auto lg:mt-0 lg:mb-0">EN</span>
 
                 <div className="vertical-bar"/>

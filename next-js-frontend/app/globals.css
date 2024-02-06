@@ -1,9 +1,7 @@
-
 @tailwind components;
 @tailwind utilities;
 
 nav {
-
 
 
     transition: background-color 0.3s ease-in-out;
@@ -49,14 +47,15 @@ nav {
         color: #2D9CDB;
     }
 
-    img {
-        transition: transform 0.3s ease-in-out;
-    }
+    .contact-wrapper {
+        img {
+            transition: transform 0.3s ease-in-out;
+        }
 
-    img:hover {
-        transform: scale(1.2);
+        img:hover {
+            transform: scale(1.2);
+        }
     }
-
 
     background: #151D20;
 
@@ -97,18 +96,18 @@ body {
     margin: 0;
 }
 
-p{
+p {
     font-family: 'Titillium Web', sans-serif;
 
 }
 
 
-a{
+a {
     text-decoration: none;
 }
 
-img{
-    &:hover{
+img {
+    &:hover {
         cursor: pointer;
     }
 }
@@ -150,7 +149,7 @@ html {
     height: 2vh;
 }
 
-a{
+a {
     font-family: 'Titillium Web', sans-serif;
 
 }

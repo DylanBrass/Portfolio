@@ -1,6 +1,7 @@
 'use client'
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter"
 import java from 'react-syntax-highlighter/dist/esm/languages/prism/java';
+import {atomDark} from "react-syntax-highlighter/dist/esm/styles/prism";
 import './Corso.css'
 import mainPage from '@/public/corso-main-page.png'
 
@@ -16,6 +17,12 @@ import 'swiper/css/pagination';
 import {Navigation, Pagination} from 'swiper/modules';
 
 export default function Corso() {
+
+    const codeString = 'public class HelloWorld {\n' +
+        '    public static void main(String[] args) {\n' +
+        '        System.out.println("Hello, World!"); \n' +
+        '    }\n' +
+        '}';
 
 
     SyntaxHighlighter.registerLanguage('java', java);
@@ -63,9 +70,45 @@ export default function Corso() {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
+                    <div className={"flex h-fit p-8"}>
 
+                        <div className={"w-1/2 p-2"}>
 
+                            <SyntaxHighlighter language={"java"} style={atomDark}>
+                                {codeString}
+                            </SyntaxHighlighter>
+                        </div>
 
+                        <div className={"w-1/2 text-center p-2"}>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                                amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                dolores
+                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                sit
+                                amet.
+
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
+                                vel
+                                illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+                                qui
+                                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                                Lorem
+                                ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt
+                                ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+                        </div>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide>Slide 3</SwiperSlide>
                 <SwiperSlide>Slide 4</SwiperSlide>

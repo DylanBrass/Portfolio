@@ -1,31 +1,28 @@
-'use client'
 import "./Education.css"
-import {useEffect, useState} from "react";
+import {Suspense} from "react";
 import axios from "axios";
+
 
 import Commendations from "../../Models/Commendations";
 
-export default function Education() {
+export default async function Education() {
 
 
-    const [commendations, setCommendations] = useState<[Commendations]>([new Commendations("","","","")]);
+    async function getCommendations(): Promise<Commendations[]> {
+        let response =  await axios.get(`${process.env.NEXT_PUBLIC_BE_HOST}api/commendations`)
 
-    const getCommendations = async () => {
-        axios.get(`${process.env.NEXT_PUBLIC_BE_HOST}api/commendations`)
-            .then((response) => {
-                setCommendations(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
+        if (response.status !== 200){
+            return []
+        }
+
+        return response.data;
 
     }
 
 
-    useEffect(() => {
-        getCommendations();
-    }, []);
-
+    const commendations = await getCommendations();
 
     return (
         <div className="container mx-auto mt-8">
@@ -57,17 +54,20 @@ export default function Education() {
                 </div>
 
                 <div className="commendations col-span-full md:col-span-6">
+                    <embed src="/CV_fr.pdf" width="100%" height={"100%"} className={"overflow-auto"}/>
+                    <a className={"download-resume"} href="/CV_fr.pdf" download={"dylan_brassard_cv"}>Download my
+                        resume</a>
                     <a href="/commendations/create" className="block mb-4 text-blue-500">Leave me a commendation</a>
                     <h2>Commendations</h2>
 
-                    {
-                        commendations.map((commendation, index) => (
-                            <div key={index} className="commendation">
-                                <h3 className="text-xl font-bold mb-2">{commendation.name}</h3>
-                                <p>{commendation.message}</p>
-                            </div>
-                        ))
-                    }
+                        {
+                            commendations.map((commendation, index) => (
+                                <div key={index} className="commendation">
+                                    <h3 className="text-xl font-bold mb-2">{commendation.name}</h3>
+                                    <p>{commendation.message}</p>
+                                </div>
+                            ))
+                        }
                 </div>
 
             </div>
