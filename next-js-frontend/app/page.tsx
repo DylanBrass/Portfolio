@@ -15,7 +15,7 @@ export default function Home() {
             <Intro/>
 
             <hr/>
-            <div className={""}>
+            <div id={"projects"} className={""}>
                 <ShowRepos/>
 
             </div>

@@ -32,7 +32,7 @@ export default function Commendations() {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Something went wrong!\n" + error.response.data.message + "\nPlease try again."
+                    text: "Something went wrong!\n" + error.response.data + "\nPlease try again."
                 });
             });
     }

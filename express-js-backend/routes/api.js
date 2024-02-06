@@ -30,7 +30,7 @@ router.get('/commendations', async (req, res) => {
 
 router.post('/commendations', async (req, res) => {
     if (!req.body.name || !req.body.email || !req.body.message) {
-        res.status(400).send('missing fields')
+        res.status(400).json({ message: 'Missing required fields' })
         return
     }
 
@@ -67,7 +67,7 @@ router.post('/commendations', async (req, res) => {
     await sendEmail('dylanbrassard1@gmail.com','dylan.brassard@outlook.com','New Commendations for portfolio!', 'confirmCommendation', context).catch(
         (err) => {
             console.log(err)
-            res.status(422).send('error sending email')
+            res.status(422).json({message:'error sending email'})
 
         }
     )

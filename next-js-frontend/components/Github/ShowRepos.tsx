@@ -116,17 +116,15 @@ export default function ShowRepos() {
                         // @ts-ignore
                         repo.id}>
                         <div className={"w-screen h-[100%] text-center"}>
+                            <h2>{formatRepo(repo)}</h2>
                             <a href={repo.html_url} className={"capitalize repo-item"}
+                               target={"_blank"}
                                style={{
                                    textDecoration: "none",
                                    color: "black"
                                }}
                             >
-                                {
-                                    // @ts-ignore
-                                    <h2>{formatRepo(repo)}</h2>
-
-                                }
+                                View on Github
                             </a>
                             <div className={"languages"}>
                                 {
