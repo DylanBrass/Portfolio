@@ -1,4 +1,5 @@
 'use client'
+
 import {Typewriter} from "nextjs-simple-typewriter";
 
 export default function Loading() {
@@ -15,6 +16,18 @@ export default function Loading() {
 
     return (
         <div className={"loading m-auto"}>
+
+            <Typewriter
+                words={['Loading', 'Loading.', 'Loading..', 'Loading...']}
+                loop={5}
+                cursor
+                cursorStyle='_'
+                typeSpeed={100}
+                deleteSpeed={100}
+                delaySpeed={1000}
+                onLoopDone={handleDone}
+                onType={handleType}
+            />
 
         </div>
     );

@@ -11,8 +11,6 @@ export default async function Education() {
     async function getCommendations(): Promise<Commendations[]> {
         let response =  await axios.get(`${process.env.NEXT_PUBLIC_BE_HOST}api/commendations`)
 
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-
         if (response.status !== 200){
             return []
         }

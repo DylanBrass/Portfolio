@@ -4,15 +4,24 @@ import {useEffect, useState} from "react";
 import Repo from "@/Models/Repos";
 import './showRepos.css';
 import {Typewriter} from "nextjs-simple-typewriter";
+import {Pagination} from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Cell, Legend, Pie, PieChart, Tooltip} from 'recharts';
 
 export default function ShowRepos() {
+
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#4CAF50', '#FFD700', '#8A2BE2', '#FF4500', '#7CFC00', '#FF69B4'];
 
     const [repos, setRepos] = useState<Repo[]>([]);
 
     const [error, setError] = useState<string>("null");
 
     const getRepos = async () => {
-        const response = await fetch('https://api.github.com/users/DylanBrass/repos');
+        const response = await fetch('https://api.github.com/users/DylanBrass/repos', {
+            headers: {
+                'Authorization': `BEARER ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`
+            }
+        });
         const data = await response.json();
         console.log(data)
         if (response.status != 200) {
@@ -22,19 +31,23 @@ export default function ShowRepos() {
         setRepos(data);
     }
 
-    async function getLanguages(url: string): Promise<string[]> {
+    async function getLanguages(url: string): Promise<{}[]> {
 
         if (url === "" || url === undefined) {
 
-            return []
+            return [{}]
         }
 
-        const response = await fetch(url + "/languages")
+        const response = await fetch(url + "/languages", {
+            headers: {
+                'Authorization': `BEARER ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`
+            }
+        });
 
         console.log(response)
 
         if (response.status != 200) {
-            return []
+            return [{}]
         }
 
         // remove promise type
@@ -43,7 +56,8 @@ export default function ShowRepos() {
 
         console.log(data)
 
-        return Object.keys(data)
+
+        return data;
 
 
     }
@@ -57,7 +71,7 @@ export default function ShowRepos() {
     return (
         <main>
 
-            <h1>Github Repos</h1>
+            <h1 className={"text-center"}>Github Repos</h1>
 
             {repos.length === 0 && error === "null" ? (
                     <div>
@@ -88,50 +102,108 @@ export default function ShowRepos() {
             }
 
 
-            {repos.map((repo) => (
+            <Swiper
+                pagination={{
+                    type: 'bullets',
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                {repos.map((repo) => (
 
 
-                <div key={
-                    // @ts-ignore
-                    repo.id}>
-                    <a href={repo.html_url} className={"capitalize repo-item"}
-                       style={{
-                           textDecoration: "none",
-                           color: "black"
-                       }}
-                    >
-                        {
-                            // @ts-ignore
-                            formatRepo(repo)
+                    <SwiperSlide key={
+                        // @ts-ignore
+                        repo.id}>
+                        <div className={"w-screen h-[100%] text-center"}>
+                            <a href={repo.html_url} className={"capitalize repo-item"}
+                               style={{
+                                   textDecoration: "none",
+                                   color: "black"
+                               }}
+                            >
+                                {
+                                    // @ts-ignore
+                                    <h2>{formatRepo(repo)}</h2>
 
-                        }
-                    </a>
-                    <div className={"languages"}>
-                        {
-                            getLanguages(repo.url).then((languages) => {
-                                if (languages.length === 0) {
-                                    return
                                 }
-                                return (
-                                    <Typewriter
-                                        key={languages[0]}
-                                        words={languages}
-                                        cursor
-                                        loop={10000}
-                                        cursorBlinking={true}
-                                        cursorStyle='_'
-                                        typeSpeed={70}
-                                        deleteSpeed={50}
-                                        delaySpeed={1000}
-                                    />
-                                )
-                            })
-                        }
+                            </a>
+                            <div className={"languages"}>
+                                {
+                                    getLanguages(repo.url).then((languages) => {
+                                        if (languages.length === 0) {
+                                            return
+                                        }
 
 
-                    </div>
-                </div>
-            ))}
+                                        return (
+                                            <div>
+                                                {Object.keys(languages).length <= 1 ?
+
+                                                    <div>
+                                                        <p style={{
+                                                            fontFamily: "'__Inter_e66fe9', '__Inter_Fallback_e66fe9'",
+                                                            fontStyle: 'normal'
+                                                        }}>
+                                                            Written in : {Object.keys(languages)[0]}</p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <Typewriter
+                                                            key={Object.keys(languages)[0]}
+                                                            words={Object.keys(languages)}
+                                                            cursor
+                                                            loop={10000}
+                                                            cursorBlinking={true}
+                                                            cursorStyle='|'
+                                                            typeSpeed={70}
+                                                            deleteSpeed={50}
+                                                            delaySpeed={1000}
+                                                        />
+                                                    </div>
+                                                }
+                                                <PieChart width={400} height={400}
+                                                          className={"m-auto mb-6"}
+                                                >
+                                                    <Pie
+                                                        data={Object.keys(languages).map((key) => {
+                                                            return {
+                                                                name: key,
+                                                                // @ts-ignore
+                                                                value: parseFloat((languages[key] / Object.values(languages).reduce((a, b) => a + b, 0) * 100).toFixed(2))
+                                                            }
+                                                        })}
+                                                        cx={200}
+                                                        cy={200}
+                                                        paddingAngle={Object.keys(languages).length <= 1 ? 0 : 5}
+                                                        outerRadius={80}
+                                                        fill="#8884d8"
+                                                        dataKey="value"
+                                                        label
+                                                    >
+                                                        {
+                                                            Object.keys(languages).map((entry, index) => <Cell
+                                                                key={`cell-${index}`}
+                                                                fill={COLORS[index % COLORS.length]}
+                                                            />)
+                                                        }
+
+                                                    </Pie>
+                                                    <Legend/>
+                                                    <Tooltip/>
+                                                </PieChart>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+
+
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </main>
     );
 

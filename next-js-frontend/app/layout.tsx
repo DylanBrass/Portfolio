@@ -21,13 +21,17 @@ export default function RootLayout({
         <html lang="en">
 
         <body className={inter.className}>
+
         <div className={"h-screen animation-wrapper"} id={"animation-intro"}>
+
+            <Navbar/>
             <Suspense fallback={<Loading/>}>
 
-                <Navbar/>
                 {children}
             </Suspense>
+
         </div>
+
         </body>
         </html>
     );
