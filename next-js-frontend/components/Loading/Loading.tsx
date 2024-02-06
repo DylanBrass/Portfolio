@@ -4,29 +4,18 @@ import {Typewriter} from "nextjs-simple-typewriter";
 
 export default function Loading() {
 
-    const handleType = (count: number) => {
-        // access word count number
-        console.log(count)
-    }
-
-
-    const handleDone = () => {
-        console.log(`Done after 5 loops!`)
-    }
 
     return (
-        <div className={"loading m-auto"}>
+        <div className={"loading m-auto text-center mt-5 mb-5"}>
 
             <Typewriter
                 words={['Loading', 'Loading.', 'Loading..', 'Loading...']}
                 loop={5}
                 cursor
-                cursorStyle='_'
+                cursorStyle=''
                 typeSpeed={100}
                 deleteSpeed={100}
                 delaySpeed={1000}
-                onLoopDone={handleDone}
-                onType={handleType}
             />
 
         </div>

@@ -15,6 +15,8 @@ export default async function Education() {
             return []
         }
 
+        console.log(response.data)
+
         return response.data;
 
     }

@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Repo from "@/Models/Repos";
 import './showRepos.css';
 import {Typewriter} from "nextjs-simple-typewriter";
-import {Pagination} from "swiper/modules";
+import {Navigation, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Cell, Legend, Pie, PieChart, Tooltip} from 'recharts';
 
@@ -34,7 +34,6 @@ export default function ShowRepos() {
     async function getLanguages(url: string): Promise<{}[]> {
 
         if (url === "" || url === undefined) {
-
             return [{}]
         }
 
@@ -105,8 +104,12 @@ export default function ShowRepos() {
             <Swiper
                 pagination={{
                     type: 'bullets',
+                    clickable: true
                 }}
-                modules={[Pagination]}
+                navigation={
+                    true
+                }
+                modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
                 {repos.map((repo) => (
@@ -136,30 +139,22 @@ export default function ShowRepos() {
 
                                         return (
                                             <div>
-                                                {Object.keys(languages).length <= 1 ?
 
-                                                    <div>
-                                                        <p style={{
-                                                            fontFamily: "'__Inter_e66fe9', '__Inter_Fallback_e66fe9'",
-                                                            fontStyle: 'normal'
-                                                        }}>
-                                                            Written in : {Object.keys(languages)[0]}</p>
-                                                    </div>
-                                                    :
-                                                    <div>
-                                                        <Typewriter
-                                                            key={Object.keys(languages)[0]}
-                                                            words={Object.keys(languages)}
-                                                            cursor
-                                                            loop={10000}
-                                                            cursorBlinking={true}
-                                                            cursorStyle='|'
-                                                            typeSpeed={70}
-                                                            deleteSpeed={50}
-                                                            delaySpeed={1000}
-                                                        />
-                                                    </div>
-                                                }
+
+                                                <div>
+                                                    <Typewriter
+                                                        key={Object.keys(languages)[0]}
+                                                        words={Object.keys(languages)}
+                                                        cursor
+                                                        loop={Object.keys(languages).length <= 1 ? 1 : 10000}
+                                                        cursorBlinking={true}
+                                                        cursorStyle='_'
+                                                        typeSpeed={70}
+                                                        deleteSpeed={50}
+                                                        delaySpeed={1000}
+                                                    />
+                                                </div>
+
                                                 <PieChart width={400} height={400}
                                                           className={"m-auto mb-6"}
                                                 >

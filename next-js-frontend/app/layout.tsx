@@ -1,9 +1,8 @@
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
-import React, {Suspense} from "react";
+import React from "react";
 import Navbar from "@/components/Navbar/Navbar";
-import Loading from "@/components/Loading/Loading";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -25,10 +24,8 @@ export default function RootLayout({
         <div className={"h-screen animation-wrapper"} id={"animation-intro"}>
 
             <Navbar/>
-            <Suspense fallback={<Loading/>}>
 
-                {children}
-            </Suspense>
+            {children}
 
         </div>
 

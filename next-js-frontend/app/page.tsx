@@ -7,6 +7,8 @@ import Corso from "@/components/ECP/Corso";
 import GolfGame from "@/components/Game-Project/GolfGame";
 import ArtGallery from "@/components/Art-Gallery/ArtGallery";
 import Intro from "@/components/Introduction/Intro";
+import Loading from "@/components/Loading/Loading";
+import React, {Suspense} from "react";
 
 export default function Home() {
     return (
@@ -16,8 +18,9 @@ export default function Home() {
 
             <hr/>
             <div id={"projects"} className={""}>
-                <ShowRepos/>
-
+                <Suspense fallback={<Loading/>}>
+                    <ShowRepos/>
+                </Suspense>
             </div>
 
             <Corso/>
