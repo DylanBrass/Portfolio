@@ -34,35 +34,42 @@ export default function Education() {
         <div className="container mx-auto mt-8">
             <div className={"text-center"}>
                 <div className={"m-auto"}>
-                    <h2>People I worked with !</h2>
+                    {commendations.length === 0 ? <h2>No commendations yet !</h2> :
+                        <div>
+                            <h2>People I worked with !</h2>
+                            <a href="/commendations/create" className="block mb-4 text-blue-500">Worked with me before
+                                ?</a>
 
 
-                    <Swiper
-                        pagination={{
-                            type: 'bullets',
-                            clickable: true
-                        }}
-                        loop={true}
-                        autoplay={true}
-                        modules={[Pagination, Autoplay]}
-                        speed={1000}
-                        className="mySwiper"
-                    >
-                        {commendations.map((commendation, index) => {
-                            return (
-                                <SwiperSlide
-                                    key={index}
-                                >
-                                    <div className={"m-5 mb-20"}>
-                                        <div key={index} className="commendation w-fit m-auto p-2 rounded-b min-w-[50%] h-full shadow-lg">
-                                            <h3>From : {commendation.name}</h3>
-                                            <p className={""}>{commendation.message}</p>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        })}
-                    </Swiper>
+                            <Swiper
+                                pagination={{
+                                    type: 'bullets',
+                                    clickable: true
+                                }}
+                                loop={true}
+                                autoplay={true}
+                                modules={[Pagination, Autoplay]}
+                                speed={1000}
+                                className="mySwiper"
+                            >
+                                {commendations.map((commendation, index) => {
+                                    return (
+                                        <SwiperSlide
+                                            key={index}
+                                        >
+                                            <div className={"m-5 mb-20"}>
+                                                <div key={index}
+                                                     className="commendation w-fit m-auto p-2 rounded-b min-w-[50%] h-full shadow-lg">
+                                                    <h3>From : {commendation.name}</h3>
+                                                    <p className={""}>{commendation.message}</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    )
+                                })}
+                            </Swiper>
+                        </div>
+                    }
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 resume-box h-[90vh]">
@@ -96,7 +103,6 @@ export default function Education() {
                     <embed src="/CV_fr.pdf" width="100%" height={"100%"} className={"overflow-auto"}/>
                     <a className={"download-resume"} href="/CV_fr.pdf" download={"dylan_brassard_cv"}>Download my
                         resume</a>
-                    <a href="/commendations/create" className="block mb-4 text-blue-500">Leave me a commendation</a>
 
 
                 </div>

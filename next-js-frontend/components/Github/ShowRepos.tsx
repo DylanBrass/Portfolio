@@ -148,7 +148,7 @@ export default function ShowRepos() {
                                                         cursor
                                                         loop={Object.keys(languages).length <= 1 ? 1 : 10000}
                                                         cursorBlinking={true}
-                                                        cursorStyle='_'
+                                                        cursorStyle={Object.keys(languages).length <= 1 ? '' : '_'}
                                                         typeSpeed={70}
                                                         deleteSpeed={50}
                                                         delaySpeed={1000}
