@@ -5,8 +5,14 @@ import axios from "axios";
 
 import Commendations from "../../Models/Commendations";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Pagination} from "swiper/modules";
-import {Suspense, useEffect, useState} from "react";
+import {Autoplay, Pagination} from "swiper/modules";
+import {useEffect, useState} from "react";
+
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Education() {
 
@@ -26,7 +32,40 @@ export default function Education() {
 
     return (
         <div className="container mx-auto mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 resume-box">
+            <div className={"text-center"}>
+                <div className={"m-auto"}>
+                    <h2>People I worked with !</h2>
+
+
+                    <Swiper
+                        pagination={{
+                            type: 'bullets',
+                            clickable: true
+                        }}
+                        loop={true}
+                        autoplay={true}
+                        modules={[Pagination, Autoplay]}
+                        speed={1000}
+                        className="mySwiper"
+                    >
+                        {commendations.map((commendation, index) => {
+                            return (
+                                <SwiperSlide
+                                    key={index}
+                                >
+                                    <div className={"m-5 mb-20"}>
+                                        <div key={index} className="commendation w-fit m-auto p-2 rounded-b min-w-[50%] h-full shadow-lg">
+                                            <h3>From : {commendation.name}</h3>
+                                            <p className={""}>{commendation.message}</p>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            )
+                        })}
+                    </Swiper>
+                </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 resume-box h-[90vh]">
 
                 <div id="education" className="flex flex-col col-span-full md:col-span-6 text-center mb-4 md:mb-0">
                     <h2>Education</h2>
@@ -58,41 +97,13 @@ export default function Education() {
                     <a className={"download-resume"} href="/CV_fr.pdf" download={"dylan_brassard_cv"}>Download my
                         resume</a>
                     <a href="/commendations/create" className="block mb-4 text-blue-500">Leave me a commendation</a>
-                    <h2>Commendations</h2>
 
-                    <Suspense fallback={<div>Loading...</div>}>
-
-                        <Swiper
-                            pagination={{
-                                type: 'bullets',
-                                clickable: true
-                            }}
-                            navigation={
-                                true
-                            }
-                            modules={[Pagination, Navigation]}
-                            className="mySwiper"
-                        >
-                            {commendations.map((commendation, index) => {
-                                return (
-                                    <SwiperSlide
-                                        key={index}
-                                    >
-
-                                        <div key={index} className="commendation">
-                                            <h3>{commendation.name}</h3>
-                                            <p>{commendation.message}</p>
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
-
-                    </Suspense>
 
                 </div>
 
+
             </div>
+
         </div>
     );
 }
