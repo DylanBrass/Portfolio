@@ -16,7 +16,7 @@ export default function ModelBuilding() {
                 context and the engineering complexity of one of the most iconic battleships from World War II.
                 <br/>
                 <br/>
-                Assembling these models is not just a pastime; it's a journey through history and a celebration of
+                Assembling these models is not just a pastime; it&apos;s a journey through history and a celebration of
                 craftsmanship. The selection of materials, the careful study of historical references, and the patience
                 required for such a sizable project all contribute to the gratification I derive from this hands-on
                 pursuit.

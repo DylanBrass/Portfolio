@@ -1,13 +1,5 @@
-import PetClinic from "@/components/Pet-Clinic/PetClinic";
-import ShowRepos from "@/components/Github/ShowRepos";
-import ContactManager from "@/components/Contact-Manager/ContactManager";
-import Corso from "@/components/ECP/Corso";
-import GolfGame from "@/components/Game-Project/GolfGame";
-import ArtGallery from "@/components/Art-Gallery/ArtGallery";
 import Intro from "@/components/Introduction/Intro";
-import Loading from "@/components/Loading/Loading";
-import React, { Suspense } from "react";
-import { getDictionary } from "@/dictionaries/getDictionary";
+import React from "react";
 import background from "@/public/mainPageBackground.jpg";
 
 export default function Home() {

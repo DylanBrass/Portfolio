@@ -152,8 +152,8 @@ private void Update()
                         <div className={"w-1/2 text-center p-2"}>
 
                             <p className={"m-auto"}>
-                                This code is what make the line behing the ball appear and determine the strength of the
-                                hit. I really liked thiis code for how simple it ended up being, we used line renderer
+                                This code is what make the line behind the ball appear and determine the strength of the
+                                hit. I really liked this code for how simple it ended up being, we used line renderer
                                 to draw the line to the cursor with a maximum length. Then with a calculation here :
                             </p>
                             <div className={"p-2 max-h-56 overflow-scroll"}>
