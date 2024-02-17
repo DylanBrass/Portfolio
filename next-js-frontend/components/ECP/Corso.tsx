@@ -18,11 +18,45 @@ import {Navigation, Pagination} from 'swiper/modules';
 
 export default function Corso() {
 
-    const codeString = 'public class HelloWorld {\n' +
-        '    public static void main(String[] args) {\n' +
-        '        System.out.println("Hello, World!"); \n' +
-        '    }\n' +
-        '}';
+    const codeString = ' @Override\n' +
+        '    public int sendEmail(String recipient, String subject, String template, Map<String, String> parameters) throws MessagingException {\n' +
+        '        try {\n' +
+        '            log.info("Sending email to {}", recipient);\n' +
+        '            for (Map.Entry<String, String> entry : parameters.entrySet()) {\n' +
+        '                log.info("Parameter {} : {}", entry.getKey(), entry.getValue());\n' +
+        '            }\n' +
+        '            Message message = new MimeMessage(session);\n' +
+        '\n' +
+        '            message.setFrom(new InternetAddress(username));\n' +
+        '            message.setRecipients(\n' +
+        '                    Message.RecipientType.TO,\n' +
+        '                    InternetAddress.parse(recipient)\n' +
+        '            );\n' +
+        '            message.setSubject(subject);\n' +
+        '\n' +
+        '            Context context = new Context();\n' +
+        '            //loop for all parameters and add them to the context\n' +
+        '\n' +
+        '            for (Map.Entry<String, String> entry : parameters.entrySet()) {\n' +
+        '                context.setVariable(entry.getKey(), entry.getValue());\n' +
+        '            }\n' +
+        '\n' +
+        '            String processedString = templateEngine.process(template, context);\n' +
+        '\n' +
+        '            //error is handled by the global controller handler\n' +
+        '\n' +
+        '            message.setContent(processedString, "text/html; charset=utf-8");\n' +
+        '\n' +
+        '\n' +
+        '            Transport.send(message);\n' +
+        '            return HttpStatus.SC_OK;\n' +
+        '        } catch (MessagingException e) {\n' +
+        '            throw new MessagingException();\n' +
+        '        } catch (Exception e) {\n' +
+        '            log.error(e.getMessage());\n' +
+        '            return HttpStatus.SC_UNPROCESSABLE_ENTITY;\n' +
+        '        }\n' +
+        '    }'
 
 
     SyntaxHighlighter.registerLanguage('java', java);
@@ -47,78 +81,48 @@ export default function Corso() {
                         </div>
                         <div className={"w-1/2 text-center p-2"}>
                             <p>
-
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                                amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-                                et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                sanctus est Lorem ipsum dolor sit amet.
-
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
-                                vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
-                                dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
-                                facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                This website was the combination of everything we learned in CEGEP, we were tasked to
+                                find a client and fulfill the requirements they had.
+                            </p>
+                            <p>
+                                Our client was Corso Electric, which is a electrician company, they wanted a website to
+                                track their orders, and show themselves to the world.
+                            </p>
+                            <p>
+                                We used React and Spring Boot to make this website, as well as MySQL for the database.
                             </p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className={"flex h-fit p-8"}>
-
-                        <div className={"w-1/2 p-2"}>
-
-                            <SyntaxHighlighter language={"java"} style={atomDark}>
+                        <div className={"w-1/2 p-2 max-h-96 overflow-scroll"}>
+                            <SyntaxHighlighter language="java" style={atomDark}>
                                 {codeString}
                             </SyntaxHighlighter>
                         </div>
-
                         <div className={"w-1/2 text-center p-2"}>
-
                             <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                                amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                dolores
-                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                sit
-                                amet.
-
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
-                                vel
-                                illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
-                                qui
-                                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-                                Lorem
-                                ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt
-                                ut laoreet dolore magna aliquam erat volutpat.
+                                This is a part of the code that I wrote for the project.
+                            </p>
+                            <p>
+                                This is a method that sends an email to the client, it uses Thymeleaf to process the
+                                template and send the email.
+                            </p>
+                            <p>
+                                The email is sent to the client with the parameters that are passed to the method.
+                            </p>
+                            <p>
+                                My goal with this method was to make it as easy as possible to send an email, so that my
+                                teammates could use it without any problem, and I tried to make it as verbosed and clear
+                                to use. I would say I succeeded in that, since a lost of people in my class ended up
+                                asking and copying my code.
                             </p>
                         </div>
                     </div>
+
                 </SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
             </Swiper>
         </div>
     )
-        ;
 }

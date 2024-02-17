@@ -10,7 +10,7 @@ const corsOptions = {
 }
 
 const connectToDatabase = require('../server/db/conn.js')
-const { v4: uuidV4 } = require('uuid');
+const {v4: uuidV4} = require('uuid');
 
 
 router.use(cors(corsOptions))
@@ -21,7 +21,7 @@ router.get('/commendations', async (req, res) => {
     let collection = await db.collection("portfolio")
 
     let results = await collection.find({show: true})
-        .project({ _id: 0 })
+        .project({_id: 0})
         .toArray();
 
     res.send(results).status(200)
@@ -30,17 +30,14 @@ router.get('/commendations', async (req, res) => {
 
 router.post('/commendations', async (req, res) => {
     if (!req.body.name || !req.body.email || !req.body.message) {
-        res.status(400).json({ message: 'Missing required fields' })
+        res.status(400).json({message: 'Missing required fields'})
         return
     }
-
-
 
 
     const db = await connectToDatabase();
 
     let collection = await db.collection("portfolio");
-
 
 
     let newDocument = {
@@ -64,10 +61,10 @@ router.post('/commendations', async (req, res) => {
     }
 
 
-    await sendEmail('dylanbrassard1@gmail.com','dylan.brassard@outlook.com','New Commendations for portfolio!', 'confirmCommendation', context).catch(
+    await sendEmail('dylanbrassard1@gmail.com', 'dylan.brassard@outlook.com', 'New Commendations for portfolio!', 'confirmCommendation', context).catch(
         (err) => {
             console.log(err)
-            res.status(422).json({message:'error sending email'})
+            res.status(422).json({message: 'error sending email'})
 
         }
     )
@@ -78,15 +75,15 @@ router.post('/commendations', async (req, res) => {
 
 router.patch('/commendations/:id', async (req, res) => {
 
-    if(req.body.pwd !== process.env.PASSWORD){
+    if (req.body.pwd !== process.env.PASSWORD) {
         res.status(401).send('Unauthorized')
         return
     }
 
     const db = await connectToDatabase();
-    const query = { comment_id: req.params.id };
+    const query = {comment_id: req.params.id};
     const updates = {
-        $set: { show: true }
+        $set: {show: true}
     };
 
 

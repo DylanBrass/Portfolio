@@ -12,12 +12,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+                                       children,params
+                                   }:{children:any, params: { lang: string }}) {
+
+    console.log(params.lang)
+
+
     return (
-        <html lang="en">
+        <html lang={params.lang}>
 
         <body className={inter.className}>
 

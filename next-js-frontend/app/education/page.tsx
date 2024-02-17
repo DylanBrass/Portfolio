@@ -13,6 +13,7 @@ import {useEffect, useState} from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Timeline from "@/components/Timeline/Timeline";
 
 export default function Education() {
 
@@ -72,43 +73,11 @@ export default function Education() {
                     }
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 resume-box h-[90vh]">
 
-                <div id="education" className="flex flex-col col-span-full md:col-span-6 text-center mb-4 md:mb-0">
-                    <h2>Education</h2>
-                    <ul className="list-education">
-                        <li>
-                            <h1 className="text-xl font-bold mb-1">2021-2024</h1>
-                            <p>
-                                <strong>College Diploma:</strong> DEC in Computer Science
-                            </p>
-                            <p>
-                                <strong>Institution:</strong> Champlain College Saint-Lambert
-                            </p>
-                        </li>
-
-                        <li>
-                            <h1 className="text-xl font-bold mb-1">2024-?</h1>
-                            <p>
-                                <strong>Degree:</strong> Genie de Logiciel/Software Engineering
-                            </p>
-                            <p>
-                                <strong>Graduation Year:</strong> TBD
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="commendations col-span-full md:col-span-6">
-                    <embed src="/CV_fr.pdf" width="100%" height={"100%"} className={"overflow-auto"}/>
-                    <a className={"download-resume"} href="/CV_fr.pdf" download={"dylan_brassard_cv"}>Download my
-                        resume</a>
-
-
-                </div>
-
-
+            <div>
+                <Timeline/>
             </div>
+
 
         </div>
     );

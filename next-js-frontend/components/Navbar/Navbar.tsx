@@ -21,6 +21,9 @@ export default function Navbar() {
                     <a href="/">Home</a>
                 </div>
                 <div className={"m-auto"}>
+                    <a href="/projects">Projects</a>
+                </div>
+                <div className={"m-auto"}>
                     <a href="/about">About</a>
                 </div>
                 <div className={"m-auto"}>
@@ -28,7 +31,7 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="contact-wrapper flex items-center justify-end lg:h-max">
-                <span className="text-white mt-auto mb-auto lg:mt-0 lg:mb-0">EN</span>
+            <span className="text-white mt-auto mb-auto lg:mt-0 lg:mb-0">EN</span>
 
                 <div className="vertical-bar"/>
                 <div className="email-box" onClick={()=>{
