@@ -60,14 +60,11 @@ export default function Page() {
                 <div className={"flex p-12 float-start"}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={myPhoto.src} alt={"placeholder"}
-                         className={"rounded-full flex items-center justify-center w-96"}/>
+                         className={"rounded-full sm:flex sm:items-center sm:justify-center w-96 hidden"}/>
                 </div>
-                <div className={"p-12"}>
-                    <h1 className={"text-4xl font-bold text-center"}>Hello! My name is Dylan Brassard</h1>
-                    <p className={"text-wrap"} style={{
-                        wordSpacing: "0.8rem",
-                        padding: "0 2rem",
-                    }}>
+                <div className={"px-6"}>
+                    <h1 className={"text-2xl font-bold"}>Hi, my name is Dylan !</h1>
+                    <p className={"text-wrap"}>
                         I&apos;m a dedicated Software Developer with a solid foundation in
                         Computer Science, holding a DEC in the field. My passion for coding is the driving force behind
                         my professional journey, where I find joy in crafting efficient and innovative solutions.
