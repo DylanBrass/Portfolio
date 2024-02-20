@@ -12,10 +12,10 @@ export default function Intro() {
                 <h2 className={"text-1xl sm:text-4xl  font-bold text-center text-white"}>&lt;Full Stack Developer /&gt;</h2>
                 <div className={"flex-row text-center"}>
                     <a href={"/projects"}
-                       className={"mt-10 bg-white hover:bg-red-300 text-black font-bold py-2 px-4 sm:mx-20 rounded"}>See my
+                       className={"mt-10 bg-white hover:bg-red-300 text-black font-bold py-2 px-4 mx-5 sm:mx-20 rounded"}>See my
                         projects
                     </a>
-                    <a className={"mt-10 bg-white hover:bg-red-300 text-black font-bold py-2 px-4 sm:mx-20 rounded"}
+                    <a className={"mt-10 bg-white hover:bg-red-300 text-black font-bold py-2 px-4 mx-5 sm:mx-20 rounded"}
                        href="/CV_fr.pdf" download={"dylan_brassard_cv"}>Download my
                         resume
                     </a>
