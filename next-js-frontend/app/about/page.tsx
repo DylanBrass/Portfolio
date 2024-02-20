@@ -64,7 +64,7 @@ export default function Page() {
                 </div>
                 <div className={"px-6"}>
                     <h1 className={"text-2xl font-bold"}>Hi, my name is Dylan !</h1>
-                    <p className={"text-wrap"}>
+                    <p className={"sm:text-wrap"}>
                         I&apos;m a dedicated Software Developer with a solid foundation in
                         Computer Science, holding a DEC in the field. My passion for coding is the driving force behind
                         my professional journey, where I find joy in crafting efficient and innovative solutions.
