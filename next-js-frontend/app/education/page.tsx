@@ -35,11 +35,12 @@ export default function Education() {
         <div className="container mx-auto mt-8">
             <div className={"text-center"}>
                 <div className={"m-auto"}>
+                    <a href="/commendations/create" className="block mb-4 text-blue-500">Worked with me before
+                        ?</a>
+
                     {commendations.length === 0 ? <h2>No commendations yet !</h2> :
                         <div>
                             <h2>People I worked with !</h2>
-                            <a href="/commendations/create" className="block mb-4 text-blue-500">Worked with me before
-                                ?</a>
 
 
                             <Swiper
