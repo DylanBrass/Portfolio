@@ -2,8 +2,13 @@
 import axios from "axios";
 import Swal from 'sweetalert2'
 import './AddCommendation.css'
+import {Locale} from "@/i18n.config";
 
-export default function CreateCommendation() {
+export default function CreateCommendation({
+                                               params: {lang},
+                                           }: {
+    params: { lang: Locale }
+}) {
 
 
     const submitCommendation = (event: any) => {
@@ -31,12 +36,15 @@ export default function CreateCommendation() {
     return (
         <div className={"add-commendation-wrapper"}>
             <div className={"container"}>
-                <h2 className={"title"}>Leave me a commendation</h2>
+                <h2 className={"title"}>{lang === "en" ? "Add a commendation" : "Ajouter une recommandation"}</h2>
                 <form onSubmit={submitCommendation}>
-                    <input className={"input"} type={"text"} name={"name"} id={"name"} placeholder={"Name"}/>
-                    <input className={"input"} type={"email"} name={"email"} id={"email"} placeholder={"Email"}/>
-                    <textarea className={"textarea"} name={"message"} id={"message"} placeholder={"Message"}/>
-                    <button className={"button"} type="submit">Submit</button>
+                    <input className={"input"} type={"text"} name={"name"} id={"name"} placeholder={lang === "en" ? "Name" : "Nom"}
+                    />
+                    <input className={"input"} type={"email"} name={"email"} id={"email"} placeholder={lang === "en" ? "Email" : "Courriel"}
+                    />
+                    <textarea className={"textarea"} name={"message"} id={"message"} placeholder={lang === "en" ? "Message" : "Message"
+                    }/>
+                    <button className={"button"} type="submit">{lang === "en" ? "Submit" : "Soumettre"}</button>
                 </form>
             </div>
         </div>

@@ -1,5 +1,3 @@
-'use client'
-
 import {useEffect, useState} from "react";
 import Repo from "@/Models/Repos";
 import './showRepos.css';
@@ -8,7 +6,8 @@ import {Navigation, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Cell, Legend, Pie, PieChart, Tooltip} from 'recharts';
 
-export default function ShowRepos() {
+export default function ShowRepos({dict}: any ) {
+
 
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#4CAF50', '#FFD700', '#8A2BE2', '#FF4500', '#7CFC00', '#FF69B4'];
 
@@ -23,7 +22,6 @@ export default function ShowRepos() {
             }
         });
         const data = await response.json();
-        console.log(data)
         if (response.status != 200) {
             setError("Error fetching repos")
             return
@@ -43,20 +41,13 @@ export default function ShowRepos() {
             }
         });
 
-        console.log(response)
-
         if (response.status != 200) {
             return [{}]
         }
 
         // remove promise type
 
-        const data = await response.json();
-
-        console.log(data)
-
-
-        return data;
+        return await response.json();
 
 
     }
@@ -70,12 +61,12 @@ export default function ShowRepos() {
     return (
         <main>
 
-            <h1 className={"text-center"}>Github Repos</h1>
+            <h1 className={"text-center"}>{dict.title}</h1>
 
             {repos.length === 0 && error === "null" ? (
                     <div>
                         <Typewriter
-                            words={['Loading...']}
+                            words={[dict.loading]}
                             cursor
                             loop={10000}
                             cursorBlinking={true}
@@ -127,7 +118,7 @@ export default function ShowRepos() {
                                    color: "black"
                                }}
                             >
-                                View on Github
+                                <p>{dict.goTo}</p>
                             </a>
                             <div className={"languages"}>
                                 {

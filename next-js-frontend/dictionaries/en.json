@@ -1,7 +1,105 @@
 {
-  "form": {
-    "name": "name",
-    "email": "email",
-    "city": "city"
-  }
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "education": "Education",
+    "email": {
+      "content": "My email is <a href='mailto:dylan.brassard@outlook.com'>dylan.brassard@outlook.com</a>. <br>Click the button to copy it to your clipboard.",
+      "copy_button_text": "Copy"
+    }
+  },
+  "intro": {
+    "title": "Welcome to my portfolio",
+    "subtitle": "<Full Stack Developer />",
+    "projects_button": "See my projects",
+    "resume_button": "Download my resume"
+  },
+  "projects": {
+    "title": "Projects",
+    "allRepos": {
+      "title": "Projects on GitHub",
+      "goTo": "View on GitHub",
+      "loading": "Loading..."
+    },
+    "corso": {
+      "slide1": {
+        "p1": "This website was the combination of everything we learned in CEGEP, we were tasked to find a client and fulfill the requirements they had.",
+        "p2": "Our client was Corso Electric, which is a electrician company, they wanted a website to track their orders, and show themselves to the world.",
+        "p3": "We used React and Spring Boot to make this website, as well as MySQL for the database."
+      },
+      "slide2": {
+        "p1": "This is a part of the code that I wrote for the project.",
+        "p2": "This is a method that sends an email to the client, it uses Thymeleaf to process the template and send the email.",
+        "p3": "The email is sent to the client with the parameters that are passed to the method.",
+        "p4": "My goal with this method was to make it as easy as possible to send an email, so that my teammates could use it without any problem, and I tried to make it as verbosed and clear to use. I would say I succeeded in that, since a lot of people in my class ended up asking and copying my code."
+      }
+    },
+    "pet_clinic": {
+      "slide1": {
+        "view": "View Here",
+        "p1": "This project is based on the spring petclinic microservices",
+        "p2": "implementation. However, only the customers, visits, vets, and api-gateway services have been retained. In addition, the Docker setup has been changed.",
+        "p3": "This repository is being used by Champlain College - St. Lambert Computer Science students who are extending the Spring Boot Microservices Petclinic. This is a multi-section, multi-year project that teaches students about Scrum, version control, issue management, TDD, CI, and so much more.",
+        "p4": "I was put in charge of the authentication microservice, this meant I had to become familiar with JWT's, Spring Security, Spring boot, Angular JS and many security concepts as well as java one's."
+      },
+      "slide2": {
+        "p1": "Since we were using Microservices, and I was asked by my teacher to not put the authentication/authorization logic in the api-gateway,\n                                I chose to create my own annotation and filters, on the left is my annotation, the next slide will show my filter.\n                         "
+      },
+      "slide3": {
+        "p1": "This is the filter I created, it checks if the endpoint is annotated with my IsUserSpecific annotation, and if it is, it checks if the user is allowed to access the resource.",
+        "p2": "This was one of three filters I created, the other two were for verifying the token and for checking if the user was allowed to access the resource (Role checking). Both of these are found in the next slide if you wish to see it !"
+      }
+    },
+    "golf_game": {
+      "slide1": {
+        "view": "View Here",
+        "p1": "This project was made with 3 other teammates, we each had our specialties and I was in charge of coding the multiplayer aspects. This project was our final project to show what we learned during our 'Gaming with Unity' class.",
+        "p2": "This was the first time I ever did anything with multiplayer and even more so, this was my first game, I had a lot of fun, and it's something I expect to do again.",
+        "p3": "As you can see when you watch the video on GitHub, there are a few bugs and polish problems, these are simply because we ran out of time since we were in our 4th semester with 7 classes and we needed to do other projects. We would all like to fix those. Otherwise more levels and cleaner multiplayer interactions are also on the list to do."
+      },
+      "slide2": {
+        "p1": "This code is what makes the line behind the ball appear and determines the strength of the hit. I really liked this code for how simple it ended up being. We used a line renderer to draw the line to the cursor with a maximum length. Then, with a calculation here :"
+      }
+    }
+  },
+  "about": {
+    "title": "Hi, my name is Dylan !",
+    "paragraph1": "I'm a dedicated Software Developer with a solid foundation in Computer Science, holding a DEC in the field. My passion for coding is the driving force behind my professional journey, where I find joy in crafting efficient and innovative solutions.",
+    "paragraph2": "While my expertise lies in software development, my interests extend beyond the digital realm. I have an insatiable curiosity for history, finding inspiration in the stories of the past that shape our present. Beyond the screen, you'll find me immersed in the world of fishkeeping, cultivating a vibrant underwater ecosystem that mirrors the complexity of coding projects.",
+    "paragraph3": "Model building is another facet of my creativity. Whether it's constructing intricate miniature replicas or designing elegant code structures, I appreciate the art of bringing ideas to life with precision and attention to detail.",
+    "paragraph4": "I thrive on challenges, particularly when it comes to backend development. Problem-solving is not just a skill; it's a source of satisfaction that propels me to continually enhance my abilities. I believe in the power of technology to make a positive impact, and I am committed to contributing my skills to create solutions that stand the test of time.",
+    "paragraph5": "Join me on this journey where the worlds of coding, history, fishkeeping, and model building converge, creating a unique tapestry that reflects my diverse interests and unwavering commitment to excellence.",
+    "hobbies": {
+      "fish": "Fish keeping",
+      "history": "Studying History",
+      "modelBuilding": "Model Building",
+      "clickToView": "Click To View My Hobbies"
+    },
+    "fish": {
+      "paragraph1": "Diving into the fascinating world of aquatic life, my interest extends beyond the screen to the vibrant ecosystems within my saltwater and freshwater aquariums.",
+      "paragraph2": "In the saltwater realm, the delicate dance of colorful marine life captures my attention. From the mesmerizing movements of coral to the elegance of saltwater fish, each element contributes to a living masterpiece. Maintaining the delicate balance of this ecosystem requires not only technical knowledge but also a deep appreciation for the intricacies of marine biology.",
+      "paragraph3": "On the freshwater side, I find joy in creating diverse environments for a variety of freshwater species. The dynamic interactions between different fish, plants, and decorations add a touch of nature to my living space. It's a constant exploration of aquascaping, water chemistry, and the unique behaviors of each freshwater inhabitant.",
+      "paragraph4": "Both saltwater and freshwater aquariums provide me with a therapeutic escape, a visual symphony that complements the analytical aspects of coding. The patience and attention to detail required in fishkeeping mirror my approach to problem-solving in software development, creating a harmonious balance between my digital and aquatic pursuits."
+    },
+    "models": {
+      "paragraph1": "Model building is a passion that allows me to combine precision and creativity. My focus lies in crafting intricate tank and plane models, with a particular emphasis on the Second World War era. The historical significance, engineering marvels, and stories of resilience from this period inspire my choice of subjects.",
+      "paragraph2": "Currently, I am engrossed in the meticulous process of building a 2-meter-long Bismarck model. This endeavor not only demands attention to detail but also requires a deep appreciation for the historical context and the engineering complexity of one of the most iconic battleships from World War II.",
+      "paragraph3": "Assembling these models is not just a pastime; it's a journey through history and a celebration of craftsmanship. The selection of materials, the careful study of historical references, and the patience required for such a sizable project all contribute to the gratification I derive from this hands-on pursuit.",
+      "paragraph4": "In parallel with my digital endeavors in software development, the artistry and precision required in model building echo in my coding practices. Each line of code, like each piece of a model, contributes to the overall design, reinforcing my belief that creativity and meticulousness are universal principles that transcend different forms of creation."
+    },
+    "history": {
+      "paragraph1": "I have always been captivated by the intricate narratives woven through time, with a special focus on two pivotal periods in history—the Napoleonic Era and the tumultuous 20th century, encompassing the geopolitics and warfare of World War I and World War II.",
+      "paragraph2": "Exploring the Napoleonic Era, I find the strategic brilliance and military tactics of Napoleon Bonaparte to be a fascinating study. The complex political landscape, epic battles, and the impact on European history during this era have left an indelible mark on my historical interests.",
+      "paragraph3": "Venturing into the 1900s, my intrigue deepens as I delve into the geopolitical intricacies and the profound impact of World War I and World War II. The global dynamics, the rise and fall of empires, and the resilience of nations during these transformative periods shape my understanding of modern history.",
+      "paragraph4": "Through my exploration of these historical epochs, I seek not only to understand the events that shaped the world but also to draw parallels and insights that resonate with the challenges and strategies in my own pursuits, such as software development and problem-solving."
+    }
+  },
+  "loading": [
+    "Loading",
+    "Loading.",
+    "Loading..",
+    "Loading..."
+  ],
+  "from": "From"
 }

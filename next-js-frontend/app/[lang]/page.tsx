@@ -1,8 +1,16 @@
 import Intro from "@/components/Introduction/Intro";
 import React from "react";
 import background from "@/public/mainPageBackground.jpg";
+import {getDictionary} from "@/lib/getDictionary";
+import {Locale} from "@/i18n.config";
 
-export default function Home() {
+export default async function Home({
+                                       params: {lang},
+                                   }: {
+    params: { lang: Locale }
+}) {
+
+
     return (
         <main>
             <div
@@ -17,7 +25,7 @@ export default function Home() {
                     alignItems: "center",
                 }}
             >
-                <Intro/>
+                <Intro lang={lang}/>
             </div>
         </main>
     );

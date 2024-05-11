@@ -4,12 +4,13 @@ import Image from "next/image";
 import linkedin from "../../public/LinkedIn_icon.png";
 import Swal from "sweetalert2";
 import logo from "../../public/logo.png";
+import LocaleSwitcher from "@/components/I18n/locale-switcher";
+import {Locale} from "@/i18n.config";
+import {getDictionary} from "@/lib/getDictionary";
 
-export default function Navbar() {
+export default  async function Navbar({lang}: { lang: Locale }) {
 
-
-
-
+    const {nav} = await getDictionary(lang)
 
     return (
         <nav className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-4 pb-4 lg:pt-0 lg:pb-0">
@@ -18,36 +19,33 @@ export default function Navbar() {
                     <a className={"animate-none"} href="/"><Image src={logo} alt="Dylan Brassard" height={65}/></a>
                 </div>
                 <div className={"m-auto"}>
-                    <a href="/">Home</a>
+                    <a href={`/${lang}`}
+                    >{nav.home}</a>
                 </div>
                 <div className={"m-auto"}>
-                    <a href="/projects">Projects</a>
+                    <a href={`/${lang}/projects`}>{nav.projects}</a>
                 </div>
                 <div className={"m-auto"}>
-                    <a href="/about">About</a>
+                    <a href={`/${lang}/about`}>{nav.about}</a>
                 </div>
                 <div className={"m-auto"}>
-                    <a href="/education">Education</a>
+                    <a href={`/${lang}/education`}>{nav.education}</a>
                 </div>
             </div>
             <div className="contact-wrapper flex items-center justify-end lg:h-max">
-            <span className="text-white mt-auto mb-auto lg:mt-0 lg:mb-0">EN</span>
-
+                <LocaleSwitcher/>
                 <div className="vertical-bar"/>
-                <div className="email-box" onClick={()=>{
+                <div className="email-box" onClick={() => {
                     Swal.fire({
                         icon: "info",
                         title: "Write me an email",
-                        html: "My email is <a href='mailto:dylan.brassard@outlook.com'>dylan.brassard@outlook.com</a>" +
-                            "<br>Click the button to copy it to your clipboard." +
-                            "<br>" +
-                            "<button class='button' onclick='navigator.clipboard.writeText(\"dylan.brassard@outlook.com\")'>Copy</button>",
+                        html: `${nav.email.content}<br>
+               <button class='mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onclick='navigator.clipboard.writeText("dylan.brassard@outlook.com")'>${nav.email.copy_button_text}</button>`,
                         showCloseButton: true,
-
-
+                        showConfirmButton: false
                     });
-
                 }}>
+
                     <Image
                         className=""
                         src={ChatImg}

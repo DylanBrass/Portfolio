@@ -1,9 +1,11 @@
+
 import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css'; // Import the CSS
 import SchoolIcon from '@mui/icons-material/School';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import {Locale} from "@/i18n.config";
 
-export default function Timeline() {
+export default function Timeline({lang}: { lang: Locale }) {
     return (
         <VerticalTimeline
             lineColor={'#ddd'}
@@ -23,7 +25,9 @@ export default function Timeline() {
                 icon={<SchoolIcon/>}
             >
                 <h3 className="vertical-timeline-element-title">École de Technologie Supérieur</h3>
-                <p className="vertical-timeline-element-subtitle">Software Engineering Bachelor</p>
+                <p className="vertical-timeline-element-subtitle">
+                    {lang === "en" ? "B.Eng. in Software Engineering" : "B.Eng. en Génie Logiciel"}
+                </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 visible={true}
@@ -37,8 +41,12 @@ export default function Timeline() {
                 iconStyle={{background: 'rgb(233, 30, 99)', color: '#fff'}}
                 icon={<WorkHistoryIcon/>}
             >
-                <h3 className="vertical-timeline-element-title">Desjardins Internship</h3>
-                <p className="vertical-timeline-element-subtitle">Software Developer</p>
+                <h3 className="vertical-timeline-element-title">
+                    {lang === "en" ? "Desjardins Internship" : "Stage chez Desjardins"}
+                </h3>
+                <p className="vertical-timeline-element-subtitle">
+                    {lang === "en" ? "Software Developer" : "Développeur Logiciel"}
+                </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 visible={true}
@@ -52,9 +60,11 @@ export default function Timeline() {
                 iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
                 icon={<SchoolIcon/>}
             >
-                <h3 className="vertical-timeline-element-title">Successfully deployed first Website</h3>
-                <p className="vertical-timeline-element-subtitle">Corso Electrique Inc. found <a
-                    href={"https://corsoelectriqueinc.tech/"}>here</a></p>
+                <h3 className="vertical-timeline-element-title">
+                    {lang === "en" ? "Successfully deployed first Website" : "Déploiement du premier site web"}
+                </h3>
+                <p className="vertical-timeline-element-subtitle"><a
+                    href={"https://corsoelectriqueinc.ca/"} target={"_blank"}>Corso Electrique Inc.</a></p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 visible={true}
@@ -68,7 +78,7 @@ export default function Timeline() {
                 iconStyle={{background: 'rgb(233, 30, 99)', color: '#fff'}}
                 icon={<WorkHistoryIcon/>}
             >
-                <h3 className="vertical-timeline-element-title">Archivist position at the SHLM</h3>
+                <h3 className="vertical-timeline-element-title">{lang === "en" ? "Archivist position at the SHLM" : "Archiviste à la SHLM"}</h3>
                 <p className="vertical-timeline-element-subtitle">Société d&apos;histoire de La
                     Prairie-de-la-Magdeleine</p>
             </VerticalTimelineElement>
@@ -85,7 +95,9 @@ export default function Timeline() {
                 icon={<SchoolIcon/>}
             >
                 <h3 className="vertical-timeline-element-title">Champlain College Saint-Lambert</h3>
-                <p className="vertical-timeline-element-subtitle">D.E.C. in Computer Science</p>
+                <p className="vertical-timeline-element-subtitle">
+                    {lang === "en" ? "D.E.C. in Computer Science" : "D.E.C. en Informatique"}
+                </p>
             </VerticalTimelineElement>
 
 

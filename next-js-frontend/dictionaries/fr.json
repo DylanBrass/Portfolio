@@ -1,7 +1,105 @@
 {
-  "form": {
-    "name": "nom",
-    "email": "courier",
-    "city": "ville"
-  }
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "À propos",
+    "education": "Éducation",
+    "email": {
+      "content": "Mon adresse e-mail est <a href='mailto:dylan.brassard@outlook.com'>dylan.brassard@outlook.com</a>. <br>Cliquez sur le bouton pour le copier dans votre presse-papiers.",
+      "copy_button_text": "Copier"
+    }
+  },
+  "intro": {
+    "title": "Bienvenue sur mon portfolio",
+    "subtitle": "<Développeur Full Stack />",
+    "projects_button": "Voir mes projets",
+    "resume_button": "Télécharger mon CV"
+  },
+  "projects": {
+    "title": "Projets",
+    "allRepos": {
+      "title": "Projets sur GitHub",
+      "goTo": "Voir sur GitHub",
+      "loading": "Chargement..."
+    },
+    "corso": {
+      "slide1": {
+        "p1": "Ce site web était la combinaison de tout ce que nous avons appris au CEGEP, on nous a chargés de trouver un client et de répondre à ses exigences.",
+        "p2": "Notre client était Corso Electric, une entreprise d'électriciens, ils voulaient un site web pour suivre leurs commandes et se présenter au monde.",
+        "p3": "Nous avons utilisé React et Spring Boot pour créer ce site web, ainsi que MySQL pour la base de données."
+      },
+      "slide2": {
+        "p1": "Ceci est une partie du code que j'ai écrit pour le projet.",
+        "p2": "Il s'agit d'une méthode qui envoie un e-mail au client, elle utilise Thymeleaf pour traiter le modèle et envoyer l'e-mail.",
+        "p3": "L'e-mail est envoyé au client avec les paramètres qui sont passés à la méthode.",
+        "p4": "Mon objectif avec cette méthode était de la rendre aussi simple que possible pour envoyer un e-mail, afin que mes coéquipiers puissent l'utiliser sans aucun problème, et j'ai essayé de la rendre aussi verbosée et claire à utiliser. Je dirais que j'ai réussi, car beaucoup de personnes de ma classe ont fini par me demander et copier mon code."
+      }
+    },
+    "pet_clinic": {
+      "slide1": {
+        "view": "Voir Ici",
+        "p1": "Ce projet est basé sur l'implémentation de la microservice spring petclinic",
+        "p2": "Cependant, seuls les services clients, visites, vétérinaires et api-gateway ont été conservés. De plus, la configuration Docker a été modifiée.",
+        "p3": "Ce référentiel est utilisé par les étudiants en informatique du Collège Champlain - St. Lambert qui étendent le projet Spring Boot Microservices Petclinic. Il s'agit d'un projet multi-sections et multi-années qui enseigne aux étudiants la méthodologie Scrum, le contrôle de version, la gestion des problèmes, le TDD, l'IC, et bien plus encore.",
+        "p4": "J'ai été chargé du microservice d'authentification, ce qui signifiait que je devais me familiariser avec les JWT, Spring Security, Spring Boot, Angular JS et de nombreux concepts de sécurité ainsi que ceux de Java."
+      },
+      "slide2": {
+        "p1": "Étant donné que nous utilisions des microservices et que mon professeur m'a demandé de ne pas mettre la logique d'authentification/autorisation dans la passerelle API, j'ai choisi de créer ma propre annotation et mes filtres. À gauche se trouve mon annotation, la prochaine diapositive montrera mon filtre."
+      },
+      "slide3": {
+        "p1": "Ceci est le filtre que j'ai créé. Il vérifie si le point de terminaison est annoté avec ma propre annotation IsUserSpecific, et si c'est le cas, il vérifie si l'utilisateur est autorisé à accéder à la ressource.",
+        "p2": "C'était l'un des trois filtres que j'ai créés. Les deux autres étaient pour vérifier le jeton et pour vérifier si l'utilisateur était autorisé à accéder à la ressource (Vérification des rôles). Vous pouvez les trouver dans la prochaine diapositive si vous le souhaitez !"
+      }
+    },
+    "golf_game": {
+      "slide1": {
+        "view": "Voir Ici",
+        "p1": "Ce projet a été réalisé avec 3 autres coéquipiers, chacun ayant ses spécialités, et j'étais chargé de coder les aspects multijoueurs. Ce projet était notre projet final pour montrer ce que nous avions appris lors de notre cours « Jeu avec Unity ».",
+        "p2": "C'était la première fois que je travaillais sur du multijoueur, et c'était aussi mon premier jeu. J'ai beaucoup apprécié, et c'est quelque chose que j'espère refaire à l'avenir.",
+        "p3": "Comme vous pouvez le voir lorsque vous regardez la vidéo sur GitHub, il y a quelques bugs et des problèmes de finition, simplement parce que nous avons manqué de temps, étant donné que nous étions en quatrième semestre avec 7 cours et que nous devions travailler sur d'autres projets. Nous aimerions tous les résoudre. Par ailleurs, l'ajout de niveaux supplémentaires et des interactions multijoueurs plus fluides figurent également sur la liste des choses à faire."
+      },
+      "slide2": {
+        "p1": "Ce code est ce qui fait apparaître la ligne derrière la balle et détermine la force du coup. J'ai vraiment aimé ce code pour sa simplicité. Nous avons utilisé un line renderer pour dessiner la ligne jusqu'au curseur avec une longueur maximale. Ensuite, avec un calcul ici :"
+      }
+    }
+  },
+  "about": {
+    "title": "Salut, mon nom est Dylan !",
+    "paragraph1": "Je suis un développeur de logiciels dévoué avec une solide formation en informatique, détenant un DEC dans le domaine. Ma passion pour la programmation est la force motrice derrière mon parcours professionnel, où je trouve de la joie à concevoir des solutions efficaces et innovantes.",
+    "paragraph2": "Alors que mon expertise réside dans le développement de logiciels, mes intérêts s'étendent au-delà du domaine numérique. J'ai une curiosité insatiable pour l'histoire, trouvant inspiration dans les récits du passé qui façonnent notre présent. Au-delà de l'écran, vous me trouverez plongé dans le monde de l'élevage de poissons, cultivant un écosystème sous-marin vibrant qui reflète la complexité des projets de codage.",
+    "paragraph3": "La construction de modèles est une autre facette de ma créativité. Que ce soit la construction de répliques miniatures complexes ou la conception de structures de code élégantes, j'apprécie l'art de donner vie aux idées avec précision et attention aux détails.",
+    "paragraph4": "Je prospère face aux défis, notamment en matière de développement backend. La résolution de problèmes n'est pas seulement une compétence ; c'est une source de satisfaction qui me pousse à continuellement améliorer mes capacités. Je crois au pouvoir de la technologie pour avoir un impact positif, et je m'engage à mettre mes compétences au service de la création de solutions qui résistent à l'épreuve du temps.",
+    "paragraph5": "Joignez-vous à moi dans ce voyage où les mondes du codage, de l'histoire, de l'élevage de poissons et de la construction de modèles convergent, créant une tapisserie unique qui reflète mes intérêts diversifiés et mon engagement indéfectible envers l'excellence.",
+    "hobbies": {
+      "fish": "Aquarium",
+      "history": "Étude de l'Histoire",
+      "modelBuilding": "Construction de Maquettes",
+      "clickToView": "Cliquez Pour Voir Mes Loisirs"
+    },
+    "fish": {
+      "paragraph1": "Je plonge dans le monde fascinant de la vie aquatique, mon intérêt s'étend au-delà de l'écran vers les écosystèmes vibrants de mes aquariums d'eau de mer et d'eau douce.",
+      "paragraph2": "Dans le domaine de l'eau de mer, la danse délicate de la vie marine colorée capture mon attention. Des mouvements hypnotisants des coraux à l'élégance des poissons d'eau de mer, chaque élément contribue à un chef-d'œuvre vivant. Maintenir l'équilibre délicat de cet écosystème nécessite non seulement des connaissances techniques, mais aussi une profonde appréciation des subtilités de la biologie marine.",
+      "paragraph3": "Du côté de l'eau douce, je trouve de la joie à créer des environnements divers pour une variété d'espèces d'eau douce. Les interactions dynamiques entre les différents poissons, les plantes et les décorations ajoutent une touche de nature à mon espace de vie. C'est une exploration constante de l'aquascaping, de la chimie de l'eau et des comportements uniques de chaque habitant d'eau douce.",
+      "paragraph4": "Les aquariums d'eau de mer et d'eau douce me fournissent à la fois une évasion thérapeutique, une symphonie visuelle qui complète les aspects analytiques du codage. La patience et l'attention aux détails nécessaires dans l'aquariophilie reflètent mon approche de la résolution de problèmes dans le développement de logiciels, créant un équilibre harmonieux entre mes activités numériques et aquatiques."
+    },
+    "models": {
+      "paragraph1": "La construction de maquettes est une passion qui me permet de combiner précision et créativité. Mon attention se porte sur la création de modèles de chars et d'avions complexes, avec un accent particulier sur l'ère de la Seconde Guerre mondiale. La signification historique, les prouesses techniques et les récits de résilience de cette période inspirent le choix de mes sujets.",
+      "paragraph2": "Actuellement, je suis absorbé par le processus méticuleux de construction d'un modèle de Bismarck de 2 mètres de long. Cette entreprise exige non seulement une attention aux détails, mais aussi une profonde appréciation du contexte historique et de la complexité technique de l'un des cuirassés les plus emblématiques de la Seconde Guerre mondiale.",
+      "paragraph3": "Assembler ces modèles n'est pas qu'un passe-temps ; c'est un voyage à travers l'histoire et une célébration du savoir-faire. Le choix des matériaux, l'étude minutieuse des références historiques et la patience requise pour un tel projet de grande envergure contribuent tous à la satisfaction que je retire de cette activité pratique.",
+      "paragraph4": "En parallèle avec mes activités numériques dans le développement de logiciels, l'art et la précision nécessaires dans la construction de maquettes résonnent dans mes pratiques de codage. Chaque ligne de code, comme chaque pièce d'un modèle, contribue à la conception globale, renforçant ma conviction que la créativité et le souci du détail sont des principes universels qui transcendent différentes formes de création."
+    },
+    "history": {
+      "paragraph1": "J'ai toujours été captivé par les récits complexes tissés à travers le temps, en mettant particulièrement l'accent sur deux périodes cruciales de l'histoire : l'ère napoléonienne et le tumulte du XXe siècle, englobant la géopolitique et les conflits de la Première Guerre mondiale et de la Seconde Guerre mondiale.",
+      "paragraph2": "En explorant l'ère napoléonienne, je trouve la brillance stratégique et les tactiques militaires de Napoléon Bonaparte être une étude fascinante. Le paysage politique complexe, les batailles épiques et l'impact sur l'histoire européenne durant cette époque ont laissé une marque indélébile sur mes intérêts historiques.",
+      "paragraph3": "En me aventurant dans les années 1900, mon intrigue s'approfondit alors que j'explore les intricacités géopolitiques et l'impact profond de la Première Guerre mondiale et de la Seconde Guerre mondiale. Les dynamiques mondiales, l'ascension et la chute des empires, et la résilience des nations durant ces périodes transformatrices façonnent ma compréhension de l'histoire moderne.",
+      "paragraph4": "À travers mon exploration de ces époques historiques, je cherche non seulement à comprendre les événements qui ont façonné le monde, mais aussi à tirer des parallèles et des idées qui résonnent avec les défis et les stratégies dans mes propres poursuites, comme le développement logiciel et la résolution de problèmes."
+    }
+  },
+  "loading": [
+    "Chargement",
+    "Chargement.",
+    "Chargement..",
+    "Chargement..."
+  ],
+  "from": "De"
 }

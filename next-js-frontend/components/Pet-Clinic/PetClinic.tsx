@@ -4,8 +4,9 @@ import mainPage from "@/public/pet-clinic.png";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 import {atomDark} from "react-syntax-highlighter/dist/esm/styles/prism";
 
-export default function PetClinic() {
+export default function PetClinic({dict} : any) {
 
+    //#region code
     const codeStringForIsUserSpecific = "package com.petclinic.bffapigateway.utils.Security.Annotations;\n" +
         "\n" +
         "import com.petclinic.bffapigateway.utils.Security.Variables.Roles;\n" +
@@ -394,6 +395,8 @@ export default function PetClinic() {
         "    }\n" +
         "}"
 
+    //#endregion
+
     return (
         <div>
 
@@ -414,28 +417,22 @@ export default function PetClinic() {
                         <div className={"w-1/2 text-center p-2"}>
                             <h3>
                                 <a href={"https://github.com/cgerard321/champlain_petclinic"}>
-                                    View Here
+                                    {dict.slide1.view}
                                 </a>
                             </h3>
                             <p>
-                                This project is based on the spring petclinic microservices
-                                (<a href={"https://github.com/spring-petclinic/spring-petclinic-microservices"}>found
-                                here</a>) implementation.
-                                However, only the customers, visits, vets, and api-gateway services have been retained.
-                                In addition, the Docker setup has been changed.
+                                {dict.slide1.p1}
+                                (<a href={"https://github.com/spring-petclinic/spring-petclinic-microservices"}>{dict.slide1.view}</a>) implementation.
+                                {dict.slide1.p2}
 
                                 <br/>
                                 <br/>
 
-                                This repository is being used by Champlain College - St. Lambert Computer Science
-                                students who are extending the Spring Boot Microservices Petclinic. This is a
-                                multi-section, multi-year project that teaches students about Scrum, version control,
-                                issue management, TDD, CI, and so much more.
+                                {dict.slide1.p3}
 
                                 <br/>
                                 <br/>
-                                I was put in charge of the authentication microservice, this meant I had to become familiar with JWT&apos;s,
-                                Spring Security, Spring boot, Angular JS and many security concepts as well as java one&apos;s.
+                                {dict.slide1.p4}
                             </p>
                         </div>
                     </div>
@@ -453,8 +450,7 @@ export default function PetClinic() {
                         <div className={"w-1/2 text-center p-2"}>
 
                             <p className={"m-auto"}>
-                               Since we were using Microservices, and I was asked by my teacher to not put the authentication/authorization logic in the api-gateway,
-                                I chose to create my own annotation and filters, on the left is my annotation, the next slide will show my filter.
+                                {dict.slide2.p1}
                             </p>
                         </div>
                     </div>
@@ -472,10 +468,10 @@ export default function PetClinic() {
                         <div className={"w-1/2 text-center p-2"}>
 
                             <p className={"m-auto"}>
-                                This is the filter I created, it checks if the endpoint is annotated with my IsUserSpecific annotation, and if it is, it checks if the user is allowed to access the resource.
+                                {dict.slide3.p1}
                             </p>
                             <p>
-                                This was one of three filters I created, the other two were for verifying the token and for checking if the user was allowed to access the resource (Role checking). Both of these are found in the next slide if you wish to see it !
+                                {dict.slide3.p2}
                             </p>
                         </div>
                     </div>

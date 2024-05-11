@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 // import required modules
 import {Navigation, Pagination} from 'swiper/modules';
 
-export default function Corso() {
+export default function Corso({dict} : any) {
 
     const codeString = ' @Override\n' +
         '    public int sendEmail(String recipient, String subject, String template, Map<String, String> parameters) throws MessagingException {\n' +
@@ -81,15 +81,14 @@ export default function Corso() {
                         </div>
                         <div className={"w-1/2 text-center p-2"}>
                             <p>
-                                This website was the combination of everything we learned in CEGEP, we were tasked to
-                                find a client and fulfill the requirements they had.
+                                {dict.slide1.p1}
                             </p>
                             <p>
-                                Our client was Corso Electric, which is a electrician company, they wanted a website to
-                                track their orders, and show themselves to the world.
+                                {dict.slide1.p2}
+
                             </p>
                             <p>
-                                We used React and Spring Boot to make this website, as well as MySQL for the database.
+                                {dict.slide1.p3}
                             </p>
                         </div>
                     </div>
@@ -103,20 +102,16 @@ export default function Corso() {
                         </div>
                         <div className={"w-1/2 text-center p-2"}>
                             <p>
-                                This is a part of the code that I wrote for the project.
+                                {dict.slide2.p1}
                             </p>
                             <p>
-                                This is a method that sends an email to the client, it uses Thymeleaf to process the
-                                template and send the email.
+                                {dict.slide2.p2}
                             </p>
                             <p>
-                                The email is sent to the client with the parameters that are passed to the method.
+                                {dict.slide2.p3}
                             </p>
                             <p>
-                                My goal with this method was to make it as easy as possible to send an email, so that my
-                                teammates could use it without any problem, and I tried to make it as verbosed and clear
-                                to use. I would say I succeeded in that, since a lost of people in my class ended up
-                                asking and copying my code.
+                                {dict.slide2.p4}
                             </p>
                         </div>
                     </div>

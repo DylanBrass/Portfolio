@@ -6,7 +6,7 @@ import {atomDark} from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import csharp from 'react-syntax-highlighter/dist/esm/languages/prism/csharp';
 
-export default function GolfGame() {
+export default function GolfGame({dict}: any) {
 
     const calculationString = " rb2d.AddForce(6.5f * force * -(endPos - (Vector2)transform.position).normalized);\n"
 
@@ -114,26 +114,19 @@ private void Update()
                             <img src={mainPage.src} alt={"Corso"} width={"100%"}/>
                         </div>
                         <div className={"w-1/2 text-center p-2"}>
-                            <h1>
+                            <h3>
                                 <a href={"https://github.com/DylanBrass/Final_Game_Project"}>
-                                    found here
+                                    {dict.slide1.view}
                                 </a>
-                            </h1>
+                            </h3>
                             <p>
-                                This project was made with 3 other teammates, we each had our specialties and I was in
-                                charge of coding the multiplayer aspects. This project was our final project to show
-                                what we learned during or &quot;Gaming with unity&quot; class.
+                                {dict.slide1.p1}
                             </p>
                             <p>
-                                This was the first time I ever did anything with multiplayer and even more so, this was
-                                my first game, I had a lot of fun, and it&apos;s something I expect to do again.
+                                {dict.slide1.p2}
                             </p>
                             <p>
-                                As you can see when you watch the video on github, there is a few bugs and polish
-                                problems, these are simply because we ran
-                                out of time since we were in our 4th semester with 7 classes and we needed to do other
-                                projects. We would all like to fix those. Otherwise more levels and cleaner multiplayer
-                                interactions are also on the list to do.
+                                {dict.slide1.p3}
                             </p>
 
 
@@ -144,7 +137,7 @@ private void Update()
                     <div className={"flex h-fit p-8"}>
                         <div className={"w-1/2 p-2 max-h-96 overflow-scroll"}>
 
-                            <SyntaxHighlighter language={"csharp"} style={atomDark}>
+                        <SyntaxHighlighter language={"csharp"} style={atomDark}>
                                 {codeString}
                             </SyntaxHighlighter>
                         </div>
@@ -152,9 +145,7 @@ private void Update()
                         <div className={"w-1/2 text-center p-2"}>
 
                             <p className={"m-auto"}>
-                                This code is what make the line behind the ball appear and determine the strength of the
-                                hit. I really liked this code for how simple it ended up being, we used line renderer
-                                to draw the line to the cursor with a maximum length. Then with a calculation here :
+                                {dict.slide2.p1}
                             </p>
                             <div className={"p-2 max-h-56 overflow-scroll"}>
                                 <SyntaxHighlighter language={"csharp"} style={atomDark}>

@@ -2,14 +2,13 @@
 
 import {Typewriter} from "nextjs-simple-typewriter";
 
-export default function Loading() {
-
+export default function Loading({text}: { text: string[] }) {
 
     return (
         <div className={"loading m-auto text-center mt-5 mb-5"}>
 
             <Typewriter
-                words={['Loading', 'Loading.', 'Loading..', 'Loading...']}
+                words={text}
                 loop={5}
                 cursor
                 cursorStyle=''

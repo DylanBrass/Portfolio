@@ -3,6 +3,7 @@ import {Inter} from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Navbar from "@/components/Navbar/Navbar";
+import {Locale} from "@/i18n.config";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
                                        children,params
-                                   }:{children:any, params: { lang: string }}) {
+                                   }:{children:any, params: { lang: Locale }}) {
 
     console.log(params.lang)
 
@@ -25,7 +26,7 @@ export default function RootLayout({
 
         <div className={"h-screen animation-wrapper"} id={"animation-intro"}>
 
-            <Navbar/>
+            <Navbar lang={params.lang}/>
 
             {children}
 
