@@ -28,7 +28,7 @@ export default function CreateCommendation({
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Something went wrong!\n" + error.response.data.message + "\nPlease try again."
+                    text: "Something went wrong!, Please try again."
                 });
             });
     }
