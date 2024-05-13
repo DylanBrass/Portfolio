@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from 'sweetalert2'
 import './AddCommendation.css'
 import {Locale} from "@/i18n.config";
+import React from "react";
 
 export default function CreateCommendation({
                                                params: {lang},
@@ -10,9 +11,11 @@ export default function CreateCommendation({
     params: { lang: Locale }
 }) {
 
+    const [isLoading, setIsLoading] = React.useState(false);
 
     const submitCommendation = (event: any) => {
         event.preventDefault();
+        setIsLoading(true);
         axios.post(process.env.NEXT_PUBLIC_BE_HOST + 'api/commendations',
             {
                 name: event.target.name.value,
@@ -30,6 +33,9 @@ export default function CreateCommendation({
                     title: "Oops...",
                     text: "Something went wrong!, Please try again."
                 });
+            })
+            .finally(() => {
+                setIsLoading(false);
             });
     }
 
@@ -44,7 +50,9 @@ export default function CreateCommendation({
                     />
                     <textarea className={"textarea"} name={"message"} id={"message"} placeholder={lang === "en" ? "Message" : "Message"
                     }/>
-                    <button className={"button"} type="submit">{lang === "en" ? "Submit" : "Soumettre"}</button>
+                    <button
+                        disabled={isLoading}
+                        className={"button"} type="submit">{lang === "en" ? "Submit" : "Soumettre"}</button>
                 </form>
             </div>
         </div>
