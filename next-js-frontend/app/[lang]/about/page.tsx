@@ -56,13 +56,13 @@ export default async function Page({
                 </div>
             </div>
 
-            <div className="flex justify-center items-center gap-5 mx-10 my-10">
-                <hr className="w-1/3"/>
-                <p className="text-center font-light text-opacity-25 italic animate-pulse flex gap-2 font-inter">Hobbies</p>
-                <hr className="w-1/3"/>
-            </div>
-            <div className="flex flex-col items-center justify-center mt-4">
 
+            <div className="flex flex-col items-center justify-center mt-4">
+                <div className="flex justify-center items-center gap-5 mx-10 my-10 w-[100%]">
+                    <hr className="w-1/3"/>
+                    <p className="text-center font-light text-opacity-25 italic animate-pulse flex gap-2 font-inter">Hobbies</p>
+                    <hr className="w-1/3"/>
+                </div>
                 <div className="flex flex-col lg:flex-row items-center lg:gap-4 mt-4">
                     <div className={`hobby-image`}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
