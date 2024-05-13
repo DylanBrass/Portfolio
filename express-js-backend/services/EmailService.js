@@ -28,11 +28,6 @@ transporter.use('compile', hbs(handlebarOptions))
 
 
 const sendEmail = async (from, to, subject, template, context) => {
-
-    console.log('sending email')
-    console.log(process.env.EMAIL_NAME)
-    console.log(process.env.EMAIL_PASSWORD)
-
     const mailOptions = {
         from: from,
         to: to,
