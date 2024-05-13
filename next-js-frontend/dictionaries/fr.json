@@ -77,18 +77,21 @@
       "clickToView": "Cliquez Pour Voir Mes Loisirs"
     },
     "fish": {
+      "title": "Aquarium",
       "paragraph1": "Je plonge dans le monde fascinant de la vie aquatique, mon intérêt s'étend au-delà de l'écran vers les écosystèmes vibrants de mes aquariums d'eau de mer et d'eau douce.",
       "paragraph2": "Dans le domaine de l'eau de mer, la danse délicate de la vie marine colorée capture mon attention. Des mouvements hypnotisants des coraux à l'élégance des poissons d'eau de mer, chaque élément contribue à un chef-d'œuvre vivant. Maintenir l'équilibre délicat de cet écosystème nécessite non seulement des connaissances techniques, mais aussi une profonde appréciation des subtilités de la biologie marine.",
       "paragraph3": "Du côté de l'eau douce, je trouve de la joie à créer des environnements divers pour une variété d'espèces d'eau douce. Les interactions dynamiques entre les différents poissons, les plantes et les décorations ajoutent une touche de nature à mon espace de vie. C'est une exploration constante de l'aquascaping, de la chimie de l'eau et des comportements uniques de chaque habitant d'eau douce.",
       "paragraph4": "Les aquariums d'eau de mer et d'eau douce me fournissent à la fois une évasion thérapeutique, une symphonie visuelle qui complète les aspects analytiques du codage. La patience et l'attention aux détails nécessaires dans l'aquariophilie reflètent mon approche de la résolution de problèmes dans le développement de logiciels, créant un équilibre harmonieux entre mes activités numériques et aquatiques."
     },
     "models": {
+      "title": "Construction de Maquettes",
       "paragraph1": "La construction de maquettes est une passion qui me permet de combiner précision et créativité. Mon attention se porte sur la création de modèles de chars et d'avions complexes, avec un accent particulier sur l'ère de la Seconde Guerre mondiale. La signification historique, les prouesses techniques et les récits de résilience de cette période inspirent le choix de mes sujets.",
       "paragraph2": "Actuellement, je suis absorbé par le processus méticuleux de construction d'un modèle de Bismarck de 2 mètres de long. Cette entreprise exige non seulement une attention aux détails, mais aussi une profonde appréciation du contexte historique et de la complexité technique de l'un des cuirassés les plus emblématiques de la Seconde Guerre mondiale.",
       "paragraph3": "Assembler ces modèles n'est pas qu'un passe-temps ; c'est un voyage à travers l'histoire et une célébration du savoir-faire. Le choix des matériaux, l'étude minutieuse des références historiques et la patience requise pour un tel projet de grande envergure contribuent tous à la satisfaction que je retire de cette activité pratique.",
       "paragraph4": "En parallèle avec mes activités numériques dans le développement de logiciels, l'art et la précision nécessaires dans la construction de maquettes résonnent dans mes pratiques de codage. Chaque ligne de code, comme chaque pièce d'un modèle, contribue à la conception globale, renforçant ma conviction que la créativité et le souci du détail sont des principes universels qui transcendent différentes formes de création."
     },
     "history": {
+      "title": "Étude de l'Histoire",
       "paragraph1": "J'ai toujours été captivé par les récits complexes tissés à travers le temps, en mettant particulièrement l'accent sur deux périodes cruciales de l'histoire : l'ère napoléonienne et le tumulte du XXe siècle, englobant la géopolitique et les conflits de la Première Guerre mondiale et de la Seconde Guerre mondiale.",
       "paragraph2": "En explorant l'ère napoléonienne, je trouve la brillance stratégique et les tactiques militaires de Napoléon Bonaparte être une étude fascinante. Le paysage politique complexe, les batailles épiques et l'impact sur l'histoire européenne durant cette époque ont laissé une marque indélébile sur mes intérêts historiques.",
       "paragraph3": "En me aventurant dans les années 1900, mon intrigue s'approfondit alors que j'explore les intricacités géopolitiques et l'impact profond de la Première Guerre mondiale et de la Seconde Guerre mondiale. Les dynamiques mondiales, l'ascension et la chute des empires, et la résilience des nations durant ces périodes transformatrices façonnent ma compréhension de l'histoire moderne.",

@@ -77,18 +77,21 @@
       "clickToView": "Click To View My Hobbies"
     },
     "fish": {
+      "title": "Fishkeeping",
       "paragraph1": "Diving into the fascinating world of aquatic life, my interest extends beyond the screen to the vibrant ecosystems within my saltwater and freshwater aquariums.",
       "paragraph2": "In the saltwater realm, the delicate dance of colorful marine life captures my attention. From the mesmerizing movements of coral to the elegance of saltwater fish, each element contributes to a living masterpiece. Maintaining the delicate balance of this ecosystem requires not only technical knowledge but also a deep appreciation for the intricacies of marine biology.",
       "paragraph3": "On the freshwater side, I find joy in creating diverse environments for a variety of freshwater species. The dynamic interactions between different fish, plants, and decorations add a touch of nature to my living space. It's a constant exploration of aquascaping, water chemistry, and the unique behaviors of each freshwater inhabitant.",
       "paragraph4": "Both saltwater and freshwater aquariums provide me with a therapeutic escape, a visual symphony that complements the analytical aspects of coding. The patience and attention to detail required in fishkeeping mirror my approach to problem-solving in software development, creating a harmonious balance between my digital and aquatic pursuits."
     },
     "models": {
+      "title": "Model Building",
       "paragraph1": "Model building is a passion that allows me to combine precision and creativity. My focus lies in crafting intricate tank and plane models, with a particular emphasis on the Second World War era. The historical significance, engineering marvels, and stories of resilience from this period inspire my choice of subjects.",
       "paragraph2": "Currently, I am engrossed in the meticulous process of building a 2-meter-long Bismarck model. This endeavor not only demands attention to detail but also requires a deep appreciation for the historical context and the engineering complexity of one of the most iconic battleships from World War II.",
       "paragraph3": "Assembling these models is not just a pastime; it's a journey through history and a celebration of craftsmanship. The selection of materials, the careful study of historical references, and the patience required for such a sizable project all contribute to the gratification I derive from this hands-on pursuit.",
       "paragraph4": "In parallel with my digital endeavors in software development, the artistry and precision required in model building echo in my coding practices. Each line of code, like each piece of a model, contributes to the overall design, reinforcing my belief that creativity and meticulousness are universal principles that transcend different forms of creation."
     },
     "history": {
+      "title": "Studying History",
       "paragraph1": "I have always been captivated by the intricate narratives woven through time, with a special focus on two pivotal periods in history—the Napoleonic Era and the tumultuous 20th century, encompassing the geopolitics and warfare of World War I and World War II.",
       "paragraph2": "Exploring the Napoleonic Era, I find the strategic brilliance and military tactics of Napoleon Bonaparte to be a fascinating study. The complex political landscape, epic battles, and the impact on European history during this era have left an indelible mark on my historical interests.",
       "paragraph3": "Venturing into the 1900s, my intrigue deepens as I delve into the geopolitical intricacies and the profound impact of World War I and World War II. The global dynamics, the rise and fall of empires, and the resilience of nations during these transformative periods shape my understanding of modern history.",

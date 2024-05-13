@@ -6,7 +6,9 @@ export default function History({dict}: any) {
              style={{width: "100"}}
         >
 
-            <h1 id={"history"} className={"text-center "}>History</h1>
+            <h1 id={"history"} className={"text-center "}>
+                {dict.title}
+            </h1>
 
             <p className={"w-50 mx-40 mb-4"}>
                 {dict.paragraph1}
